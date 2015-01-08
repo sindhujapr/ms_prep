@@ -1,0 +1,194 @@
+consistent hashing
+
+union find (disjoint set?)
+shortest path to destination word
+insert interval vs search insert position
+insert interval is to find a postion whose value is <= the target value and next value is > the target value. "search insert position" is to find a position whose value is >=
+the target value and previous value is < the target value.
+
+median of two sorted arrays
+diameter of binary tree: http://n00tc0d3r.blogspot.com/2013/07/diameter-of-binary-tree.html
+Threaded tree
+Find intersection of 2 sorted arrays. (fb)
+Reverse a doubly linked list (fb)
+concurrent skip list
+
+Kpalindrome, edit distance and its variant (see comment in EditDistance.java)
+http://linzhongzl.wordpress.com/2013/11/25/k-palindrome/
+http://orajavasolutions.wordpress.com/2013/09/21/k-palindrome/
+http://www.quora.com/A-k-palindrome-is-a-string-which-transforms-into-a-palindrome-on-removing-at-most-k-characters-from-it-Given-a-string-S-and-an-interger-K-find-whether-S-is-a-k-palindrome-or-not-Constraints-S-has-at-most-20-000-characters-and-0-k-30
+
+theory of NP problems (prove P=NP)
+bipartite graph (two-colorable http://www.geeksforgeeks.org/bipartite-graph/) and maximum bipartite graph
+range minimum query
+balanced trees(AVL, balanced tree), B-Trees, and Red-Black trees
+http://www.quora.com/What-is-a-B+-Tree/answer/Michael-Harris
+http://stackoverflow.com/questions/870218/b-trees-b-trees-difference	(this is good)
+
+max flow/mini cut
+quick selection/sort
+knapsack
+Median of two sorted arrays
+clone graph
+count and say
+Regular expression
+strStr (KMP)
+anagram
+split sentence into words
+LCA problem with no parent pointers
+How do you find the kth smallest number in a binary search tree. (write code)
+http://stackoverflow.com/questions/2329171/find-kth-smallest-element-in-a-binary-search-tree-in-optimum-way
+http://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/
+
+The first question was finding the largest drop in a an array
+merge sorted list
+maximum path in tree
+Fibonacci: recursive and iterative.
+topological sort (DFS and use finish time)
+Given an encoded message containing digits, determine the total number of ways to decode it.
+Compute square root of an integer
+It was to compare two general trees and making sure they have the same elements.
+Given a list of strings, return a list of lists, where each list consists of words that are anagrams." Example: Given ["cab", "cz", "abc", "bca", "zc"] the output should be: [ [ "abc", "bca", "cab"] , [ "zc", cz"]]
+
+Given a number n, find the largest number just smaller than n that can be formed using the same digits as n.
+rearranging letters in a word
+
+Coding - Given a NxN matrix with values X and O where X represent land and O represent water find the number of islands. Two consecutive X X (horizontal or vertical) will be part of single island while diagonal X X are not. (Solve using graph - DFS or BFS)
+Write a method to implement the flood fill algorithm. 
+http://en.wikipedia.org/wiki/Flood_fill
+
+Given Quadrant Q and Circle C, return all quadrants and their children which intersect, overlay, or envelop circle C.
+A recursive problem involving how many combinations you can make out of a set of numbers. Know your data structures, the problem used both hash tables and lists.
+
+Typical types of tree questions, such as finding the maximum tree length, closest path to various sets of nodes, along with being able to detect levels of all nodes as efficiently as possible.
+
+Given a set of objects and a function. Pass two objects to that function and it can tell you whether one object points to another one. Find one object that is pointed by all other objects.
+
+Convert a binary tree into a circular doubly linked list. The order of the elements in the linked list have to be the order of elements you get when you do an inorder traversal of the binary tree.
+
+Given a list of ranges, find whether the target range is in the union of the given intervals.
+e.g: Input: a list of intervals, e.g. [-10, 10], [50, 100], [0, 20] & a target range
+    Output: true if target can be covered by the union of all intervals
+       e.g. return true if target is [-5, 15]
+             return false if target is [30,60]
+
+counter-example: target is [0,100], intervals are [50,60],[20,30],[60,80],[0,20],[80,100],[30,50] 
+
+Given an array where each entry can be another array, and so forth, flatten the array. [4, [3, 6, [9, 1, 9, [5, 1]]], 8] -> [4, 3, 6, 9, 1, 9, 5, 1, 8]
+
+Trees and streams
+I was to asked to code a function that computes the product of two numbers in string form and outputs the result in the string form. 
+compute the number of ways to make change for 100 dollars when an arbitrary coin from the set (5c, 10c, 25c) has to be the smallest amount of change given.
+
+Design a system to run a command on all the servers (say 1 million) within the same network from one of the server on the network.
+
+Interpolation search
+Design a system to store large numbers and a function to add them.
+
+G:
+http://www.mitbbs.com/clubarticle_t/New_Mommy_and_New_Daddy/20347113.html		
+http://www.mitbbs.com/article_t/JobHunting/32568289.html	(plenty of questions)
+http://research.google.com/pubs/DistributedSystemsandParallelComputing.html
+
+
+maintain stats on a hourly, minute, and day granularity and the other was a variant of a hash table design (circular buffer?)
+Log structured file system synchronization design.
+external sort
+
+
+find the median of million rows in each of the 1000 servers.
+Basically there's external sort in O(n log n), counting sort (radix sort) variation in O(n) and distributed selection algorithm in O(n).
+http://www.fusu.us/2013/07/median-in-large-set-across-1000-servers.html
+http://www.geeksforgeeks.org/counting-sort/
+http://en.wikipedia.org/wiki/External_sorting
+
+Given a large data set that essentially consumes all working memory, what kind of sort would one implement.
+Now add the condition that the elements are alphanumeric and same length. (radix sort?)
+
+How do you design a high-write, high-read database (scalability, consistency, fault tolerance)
+What is the strategy pattern in Java
+Write a semaphore with spin-lock capability
+Dijistra and B*
+Know most famous classes of NP-complete problems, such as travelling salesman and the knapsack problem
+how to avoid live lock
+Chubby, Spanner, M/R, big table, GFS
+merge intervals
+sort linked list
+segment tree
+Describe how you would design a fully automated continuous build/test/configure/deploy system for arbitrary applications and software packages. Feel free to dive into any piece of this problem that is of interest to you.
+What type of queries/use cases would a column-oriented database be most useful for?
+what is my favorite Google product, need to show passion about it
+Design a system that accepts a small amount of data from every user, and serves it up internally at a Google scale without knowing google's architecture, replication, or authentication services.
+Build a pseudorandom maze. Write a method to deep copy a graph. Given an n x n matrix of numbers, how do I find a number?
+(1) I have a linked-list and a node has a digit.  For example, 1->2->4->6->8.  1 is a head and 8 is a tail.  It means the number 12,468.  I want to add 1.  Then, it should be 1->2->4->6->9.  Implement it.  what is the time complexity.
+write `Game Of Life' (not in pseudocode, in Java!) and write a procedure that draws a line in a bit-mapped array
+Design a method to identify utf-8 characters.
+The question was on n-ary tree data stream. The question is to find the head of the tree given a data stream of key value pairs.
+generation random number not in list
+Describe an implementation for a hash table. Explain how the data structure changes as more items are added and sketch a proof for the amortized complexity of operations.
+Finds the number of islands
+how servers are distributed for max efficiency (locality, proximity)
+I forgot this exactly but - If you had a binary tree and only two functions getNumChildren() and getNthChild( n ) how ....(get duplicates or a certain node maybe) - The main point is to use recursion. Then was asked spatial and memory efficiency (Big O)
+Systems Design - What happens during and after a query is being typed (autocomplete) in a search box whether the user is trying to go to a website or asking a question etc, and how do servers complete the request and what is the best (parallel) structure for the request to go through. DFS and how servers are located for proximity
+Break up a string into dictionary words: Given an input string and a dictionary of words, implement a method that breaks up the input string into a space-separated string of dictionary words that a search engine might use for "Did you mean?" For example, an input of "applepie" should yield an output of "apple pie", assuming that "apple" and "pie" are in the dictionary.  Deal with the simplest cases only, where the input string can be divided only into two dictionary words.  dict = ["apple", "pie"] "applepie" -> "apple pie"
+How to check whether a sudoku puzzle is solved
+http://www.mitbbs.com/article_t/JobHunting/32829537.html
+
+http://www.mitbbs.com/article_t/JobHunting/32803273.html
+
+http://judy.sourceforge.net/downloads/10minutes.htm
+
+onsite
+1. 一个manager 先聊behavior， 然后做了一个小题isOneEditDistance 判断两个string是不是只差一个编辑距离。
+2. 3Sum 变体，每个数字可以重复用。
+3. System design设计手机上读取photo feeds的app。
+    功能： 读取好友的最近图片
+               阅览好友的相册
+    要求： 满足功能的同时减少对手机的能耗。
+4. (1) 一维度向量相乘。每个向量很长，billion个数字。
+    (2) 多线程 reader 跟 writer 的经典问题。
+加面
+1. 求 LCA 两种情况，有parent结点跟没有parent的结点的情况都要回答。
+2. search in rotated sorted array LC原题。
+    decode ways LC原题。
+
+第一面system design. 先问怎么求submatrix的和，回答说先预先计算好 (0, 0), (i, j)的和，然后可以用这个和求其它的和。以为他会顺着这个问数据大了怎么design system，结果没有，问了个跟这个题毫不相关的，怎么检测一个程序为什么慢。然后就回答先确定bottleneck是cpu, disk io, 还是 network io. 然后针对每项他都详细问怎么做。交流的过程中有时候没太明白他的问题吧。反正这一面的结果很不好，当天就给我加了另外一面system design. 最后还是挂在这一面上。
+
+第二面coding. 先是 best time to buy and sell stock. 因为之前练过，讲了下思路就直接写了最优代码。然后他又让写返回两个index 的代码，这个时候有点慌了，因为没练过这个。。。然后慌忙中还写出了一个bug, 他提醒之后才发现的。改完后又让写另一个链表相关的题，单链表k个k个分组，反转奇数组。比如 link = 0->1->2->3->4->5->6->7, k = 3, 返回 2->1->0->3->4->5->7->6. 当时知道会写不完这个题的，所以就尽量先写构架，把一些细节用函数代替。最后把构架的代码写完了，留了一个反转单链表的函数没写，刚开始写这个函数的时候下一个面试官来了，就稍微讲了下思路。 
+第三面 director. 问了下为什么来facebook, 怎么处理conflict，然后跟项目有关的技术问题。最后让写sqrt(x)二分算法的代码。
+
+第四面 coding. 先问wildcard matching. 写了个暴力搜索的代码，问怎么优化的时候，说可以记忆化，记住中间结果。然后下一个题。 实现一个iterator, constructer传入一个二叉排序树，第一次调用next()返回最小的，第二次返回第二小的，第n次返回最大的，以后返回null. 刚开始提了几个用O(n)空间的方案，都被他否定了，问他是否需要O(1)空间时，他说不一定要是O(1), 那必然就是O(logn)了，所以就想到了思路。其实就是树的中序遍历的非递归实现。把栈存到Interator里面，next的时候改变栈的状态就好了。写完后有一个细节没考虑到，他提醒后改好了，另外constructor 和next里面用了同样逻辑的代码，也被他指出来了，他还指出了代码里面一个很小的优化。
+
+第五面 system design. 问的是 shorten url. 因为之前准备过这个题，所以回答应该是非常好的。面试官没问我是否见过这个题，我也就没说我准备过了。
+
+daiziguizhong:
+http://blog.csdn.net/sigh1988/article/details/9790337
+
+其它资源：
+http://www.mitbbs.com/article_t/JobHunting/32498535.html
+https://www.facebook.com/note.php?note_id=365915113919
+https://www.facebook.com/video/video.php?v=432864835468
+https://www.facebook.com/photo.php?v=572283147938&set=vb.9445547199&type=3&
+permPage=1
+http://vimeo.com/11280885
+http://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
+
+http://www.hiredintech.com/app#learn-algorithms
+
+K nearest neighbors:
+http://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+http://www.geeksforgeeks.org/closest-pair-of-points/
+http://www.geeksforgeeks.org/closest-pair-of-points-onlogn-implementation/
+http://www.alglib.net/other/nearestneighbors.php
+http://en.wikipedia.org/wiki/K-d_tree
+
+
+other:
+http://blog.csdn.net/a83610312/article/details/12522077
+http://blog.csdn.net/a83610312/article/details/12617573
+http://blog.csdn.net/a83610312/article/details/12685653
+http://blog.csdn.net/a83610312/article/details/12382013
+http://blog.csdn.net/a83610312/article/details/12892653
+
+disjoint sets:
+http://web.eecs.utk.edu/~plank/plank/classes/cs302/Notes/Disjoint/

@@ -1,2 +1,3 @@
-# lc
-My leetcode
+# interview
+
+My stuff for interview prep

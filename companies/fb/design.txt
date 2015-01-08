@@ -1,0 +1,27 @@
+tiny url:
+http://stackoverflow.com/questions/1562367/how-do-short-urls-services-work
+http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener
+http://dsingleton.github.io/short-urls/
+
+
+http://n00tc0d3r.blogspot.com/2013/07/big-data-count-occurrences.html
+
+
+
+http://www.quora.com/How-should-I-prepare-system-design-questions-for-Google-Facebook-Interview
+
+
+nginx:
+http://nginx.com/blog/using-nginx-plus-web-server/
+https://anturis.com/blog/nginx-vs-apache/
+http://www.aosabook.org/en/nginx.html#fig.nginx.arch
+
+
+c10k:
+http://www.kegel.com/c10k.html
+
+
+http://www.hiredintech.com/app#scalability-fundamentals
+
+This is good article explaining how to eliminate different bottlenecks: disk, memory and CPU:
+http://blogs.teradata.com/data-points/optimizing-disk-io-and-memory-for-big-data-vector-analysis/

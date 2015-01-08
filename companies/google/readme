@@ -1,0 +1,254 @@
+classical dynamic problems:
+http://people.cs.clemson.edu/~bcdean/dp_practice/
+
+careercup google questions
+1. java & design pattern (creational, structural, behavioral)
+2. leetcode
+3. geeksforgeeks
+4. all quetions in readme and daiziguizhong, weibo (liren chen)
+5. design
+
+topological sort
+quick select
+clone directed graph(recursive, non-recursive)
+implement a stack and able to query minimum value in O(1) time
+
+Google : Link addition
+add 2 link lists without reverse in O(n) in constant space
+eg 1-2-3 + 1-7 1-4-0
+
+java weak reference
+
+Find inorder predecessor of a given node in BST
+http://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/
+http://exceptional-code.blogspot.com/2011/08/binary-search-trees-primer.html
+
+given one BST, find the Kth minimum value
+http://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/
+http://stackoverflow.com/questions/2329171/find-kth-smallest-element-in-a-binary-search-tree-in-optimum-way/2329236#2329236
+http://algorithmsandme.blogspot.com/2013/08/introduction-consider-another-problem.html#.VKd8xmRwbtY
+
+binary tree serialization/deserialization 每个node存放一个string. serialization之后返回一个string, deserialization这个string 必须返回和原始tree一样结构的tree.后来在网上看,得知null node也存储的话, preorder或者postorder就可以唯一确定一个tree了
+
+写一个 meeting schedule, 求最少的房间
+http://nuttynanaus.wordpress.com/2014/04/26/software-engineer-interview-questions-3/
+https://hellosmallworld123.wordpress.com/2014/05/30/arranging-the-meeting-room/		(see also other problems at the end of the post)
+
+一群人排队,每个人有(height, Tvalue), height 表示身高,Tvalue 表示 前面有几个比当前人身高高的人。。然后顺序打乱,重新排队,还得复原以前的队列 (quick sort idea. use recursion)
+一个array里面找最大的这样的 h:有 h 个数大于等于 h
+
+http://www.1point3acres.com/bbs/thread-13755-1-1.html
+http://stats.stackexchange.com/questions/7307/mean-and-median-properties/7315#7315
+给一个 2d grid,给 p 个人的坐标,人只能横着走/竖着走。找出 optimal meeting point(所有人走的路程总和最短),同样没让写code, 只说思路。 一开始除了暴力没啥想法,面试官很 nice 地把问题简化成 1d 的情况...然后跟着他一起分析了一下...最后感觉他还比较满意。。
+一维情况下，考虑用归纳方法证明
+一个人，不用走
+两个人，到两人之间的任何位置汇合都可以
+三个人，拆分成左右两人和中间一人，则中间人的位置为汇合点
+四个人，拆分成外侧两人和内侧两人两个组，取两组人汇合点的交集，即内侧两人之间的任何位置
+5人、6人...
+依此类推，可以得到结论，对总人数n：
+1) 为奇数时，汇合点为中间人所在点
+2) 为偶数时，汇合点为中间两人之间的任何位置
+多维情况下，因各维度正交独立，
+可参照板凳同学方法求得各维度的汇合点，然后综合得到多维情况下的汇合点
+
+判断一个点是否在一个凸多边形内, O(n), O(logn)
+最小窗口问题 Given an input array of integers of size n, and a query array of integers of size k, find the smallest window of input array that contains all the elements of query array and also in the same order.
+find reverse pair in two arrays. There are two arrays A1 and A2. Find out the pairs of numbers in A2 which were in reverse order in A1. For ex. A1 = 2 6 5 8 1 3 A2 = 1 2 3 4 5 6 Answer: 1 & 2 5 & 6
+
+find queries that occurred more than n/3
+http://www.ituring.com.cn/article/49914
+
+longest subarray with equal numbers of 0 and 1
+http://www.ituring.com.cn/article/50347
+
+
+http://www.cnblogs.com/lxglbk/archive/2012/08/17/2644805.html
+resevior sampling:
+http://blog.csdn.net/clearriver/article/details/4846354
+
+http://mp.weixin.qq.com/s?__biz=MjM5ODIzNDQ3Mw==&mid=200446711&idx=1&sn=09b2db28fcfa289cfb69d60f066d1d91#rd
+
+http://www.careercup.com/question?id=4951409057333248
+http://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
+
+Continental divide:
+http://www.mitbbs.com/article_t/JobHunting/32549767.html
+http://en.wikipedia.org/wiki/Continental_divide
+http://www.careercup.com/question?id=15380670
+
+http://www.careercup.com/question?id=6282171643854848		(greedy approach doesn't work. See one of the comments)
+http://codeincomplete.com/posts/2011/5/7/bin_packing/
+https://github.com/juj/RectangleBinPack
+
+http://www.fusu.us/2013/07/median-in-large-set-across-1000-servers.html
+http://www.quora.com/What-is-the-distributed-algorithm-to-determine-the-median-of-arrays-of-integers-located-on-different-computers/answer/Michael-Harris
+http://okckd.github.io/blog/2014/08/09/Median-in-distributed-computers/
+http://www.careercup.com/question?id=5175812277927936
+The answer on Quora (also github) seems correct. My thought:
+1. If each server has enough memory to keep all the integers on that server, we could use quick selection in a distributed environment (suppose that we don't need to
+worry about the network latency/bandwidth, etc.). In this case, we number each server as 1,...,n. We choose the 1st value from the 1st server as pivot and use it to partition the integers on all servers. The algorithm performs pretty much the same as quick selection on a single server. The difference is that every time when have go beyond the border of a server, we need to switch to the next server and start from the beginning.
+The drawback is that this is actual sequential algorithm.
+
+2. If each server has only limited memory, each server can scan its integers and put them in a pre-defined buckets. Then we'll query a certain value (the first one would be Integer.MAX_VALUE/2) and sum up the number of integers smaller than it on each server. This can be done in a "binary search" way.
+
+3. Given a leader among the servres. First the leader gets the total number of integers. Then it gets a random number from one of the servers and get the total number of values that are smaller than this value on all servers. If it's n/2, then return this number. Otherwise if it's smaller than n/2, we choose from that server a value larger than the previous value...It's possible that the median is not on that server, but finally we couldn't get the minimum range of the median number from that server. Then we can switch to another server that has a value between this range, so on so forth.
+
+
+1，leetcode 上的longest consecutive sequence, 但是要求按顺序找
+2，find the longest increasing sequence in an integer matrix in 4 directions (up down left right), return the sequence; for example: input:
+1234,
+8765,
+output should be 12345678
+
+
+http://blog.csdn.net/codeforces_sphinx/article/details/7200301
+http://sumy7.github.io/2013/08/01/Point-in-Polygon/
+
+A(0,0)   	B(1,1)
+C(2,3)		D(2,1)		E(3,3)
+ABxAC = 2*1 - 1*3 = -1
+ABxAD = 2*1 - 1*1 = 1
+Given the points in anti-clockwise order p[0, ...n-1], let initiallly a = 1, b = n-1, A = p[0], every time pick the middle point M at index m = (a+b)>>1. Do res = APxAM, if res < 0 then P is at the left part of M, let a = m+1, else let b = m-1. Do this until 
+
+
+http://www.mitbbs.com/article_t/JobHunting/32856917.html
+http://parallelstripes.wordpress.com/2009/12/20/generating-polyominoes/
+
+
+design a data structure with O(1) time for four operations: insert, remove, contains, get random element
+http://stackoverflow.com/questions/5682218/data-structure-insert-remove-contains-get-random-element-all-at-o1
+
+http://www.mitbbs.com/article_t/JobHunting/32322891.html
+
+http://www.mitbbs.com/article_t/JobHunting/32582249.html
+
+http://www.mitbbs.com/article_t/JobHunting/32748027.html
+http://www.mitbbs.com/article_t1/JobHunting/32748027_0_1.html
+code起来感觉是比较tedious，但本质上就是新来的size如果会使当前没填满的block溢出的话就去找block中刚好sumup等于溢出量的size们（从后往前倒着找保证最小move， 而且可以证明一定可以找到sumup等于溢出量的size们，这源于size都是2的次方），把他们放入新block，新来的size加入到当前没填满的block使之填满，输出。
+
+example:
+[1 1 1 4 ], incoming 4, overflow 3, find the 3 1's that sum up to 3,  
+change to  
+[4 4 ] [1 1 1], 输出 4, 4, 当前没填满的block reset 为 ［ 1 1 1］
+
+我那个办法一次扫描，只处理一个当前block，的确不能得到1 1 1 1 1 1 1 1 8 8 4 4。
+不过最优解应该是
+1 1 1 1 1 1 1 1 4 4 8 8 吧
+
+要得到这种解，得再改改，就是在未满的当前block后如果有满的block，别急着输出，
+满的
+block先存到一个fullfilled block list 中，然后incoming 的size能填到前边未满
+block的，则填之，不能则开新的block，最后merge输出fullfilled block list 和当
+前block（可满可不满）。
+
+code麻烦不少，
+需要类似如下的class
+
+block{
+int index;
+List<Integer> sizes;
+}
+
+My thought after reading all the comments:
+1. Get the mininum space using sort.
+2. Remove all 8 bytes (may be 4+4, etc.) from the head and tail because we don't need to move them. For all 8 bytes (such as the two 8's in the below example), we have three choices: move them to the left, move them to the right, and don't move them (because the memory cost doesn't change after moving). So we should evaulate the last option (don't move) first to see whether we can still get the minimum memory cost. If we can, ...
+(4, 4), 4, 2, 1, (8, 8), 2, 1, (2, 2, 4), 1, 1, 4
+
+http://www.careercup.com/question?id=12341681
+
+given an integer ,find 最小长度 minlen 的 expression of integer, minlen 定义为多少个完 全平方数相加
+例如 14 = 1 + 4 + 9, minlen = 3
+
+http://www.quora.com/Given-a-dictionary-of-words-how-can-we-efficiently-find-a-pair-words-s-t-they-dont-have-characters-in-common-and-sum-of-their-length-is-maximum
+http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly
+
+
+http://www.geeksforgeeks.org/which-sorting-algorithm-makes-minimum-number-of-writes/
+http://www.geeksforgeeks.org/nearly-sorted-algorithm/
+http://www.geeksforgeeks.org/iterative-quick-sort/		(use stack to simulate recursion)
+http://www.geeksforgeeks.org/given-a-number-find-next-smallest-palindrome-larger-than-this-number/
+http://www.geeksforgeeks.org/reservoir-sampling/	http://www.geeksforgeeks.org/select-a-random-number-from-stream-with-o1-space/	(don't understand)
+http://www.geeksforgeeks.org/program-nth-catalan-number/	(this is interesting)
+http://www.geeksforgeeks.org/fast-multiplication-method-without-using-multiplication-operator-russian-peasants-algorithm/	(similar to power@leetcode)
+http://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion/		(interesting!)
+http://www.geeksforgeeks.org/count-number-binary-strings-without-consecutive-1s/		(DP but we can optimize the memory usage in the sample code)
+http://www.geeksforgeeks.org/find-smallest-number-whose-digits-multiply-given-number-n/
+http://www.geeksforgeeks.org/tug-of-war/		(is there any better algorithm?)
+http://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/		(interesting)
+http://www.geeksforgeeks.org/pancake-sorting/
+http://www.geeksforgeeks.org/median-of-two-sorted-arrays/		(two arrays have the same length)
+
+dp:
+http://www.geeksforgeeks.org/longest-even-length-substring-sum-first-second-half/
+http://www.geeksforgeeks.org/remove-minimum-elements-either-side-2min-max/		(seems incorrect)
+http://www.geeksforgeeks.org/length-of-the-longest-arithmatic-progression-in-a-sorted-array/
+http://www.geeksforgeeks.org/dynamic-programming-set-36-cut-a-rope-to-maximize-product/
+http://www.geeksforgeeks.org/dynamic-programming-set-31-optimal-strategy-for-a-game/
+http://www.geeksforgeeks.org/longest-common-substring/
+http://www.geeksforgeeks.org/dynamic-programming-set-4-longest-common-subsequence/
+http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
+http://www.geeksforgeeks.org/dynamic-programming-set-27-max-sum-rectangle-in-a-2d-matrix/		(extension of max sum subarray)
+http://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/
+http://www.geeksforgeeks.org/dynamic-programming-set-24-optimal-binary-search-tree/		(love it!!)
+http://www.geeksforgeeks.org/dice-throw-problem/
+http://www.geeksforgeeks.org/dynamic-programming-set-15-longest-bitonic-subsequence/		(LIS variation)
+http://www.geeksforgeeks.org/dynamic-programming-set-14-maximum-sum-increasing-subsequence/		(LIS variation)
+http://www.geeksforgeeks.org/dynamic-programming-set-12-longest-palindromic-subsequence/
+http://www.geeksforgeeks.org/dynamic-programming-set-9-binomial-coefficient/
+http://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/
+http://www.geeksforgeeks.org/dynamic-programming-set-18-partition-problem/
+http://www.geeksforgeeks.org/dynamic-programming-set-18-word-wrap/
+http://www.geeksforgeeks.org/dynamic-programming-set-11-egg-dropping-puzzle/
+http://www.geeksforgeeks.org/ugly-numbers/
+http://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/		(very good & tricky)
+graph algorithms
+RomanToInt, IntToRoman
+range minimum query
+Battleship oo design
+TicTacTeo oo degisn
+Parking lot oo design
+Saolei oo design
+
+https://www.dropbox.com/s/gj27mymhnrzbl5t/Google.txt
+http://www.mitbbs.com/article_t/JobHunting/32772613.html
+
+求最长等差数列.给定一个未排序数组,找出其中最长的等差数列.(PS O(n^2)的时间复杂度)
+第一题,可乐机有 3 个按钮。每个按钮都有出可乐量的一个范围在 max 和 min 之间。然后 给你一个指定的范围。设计个方法使出可乐量在这个范围内。
+
+circular buffer:
+http://www.mitbbs.com/article_t/JobHunting/32549839.html
+
+4.1. Given an array [a1, a2, ..., an, b1, b2, ..., bn], transform it to [a1,
+b1, a2, b2, ..., an, bn].
+Requirement: time complexity O(nlogn), space complexity O(logn)
+Sol: the base idea is to use quicksort techniques. Suppose the current array
+is A, whose size is 2k.
+1. Divide A into four segments: A = [A1 A2 B1 B2], where A1.size = B1.size =
+k / 2, B1.size = B2.size = k - k / 2;
+2. Swap A2 and B1, and we get A = [A1 B1 A2 B2]. In this step, we actually
+need to rotate [A2 B1] to the right by k - k / 2 items. This can be done by
+reversing [A2 B1] first, and then reversing [A2] and [B1] respectively.
+3. Recursive on [A1 B1] and [A2 B2] respectively.
+
+Example: A = [1 2 3 4 5 6 7 8 9 10]
+A1 = [1 2], A2 = [3 4 5], B1 = [6 7], B2 = [8 9 10]
+After 2nd step, A = [1 2 | 6 7 | 3 4 5| 8 9 10]
+For the 3rd step, process [1 2 6 7] and [3 4 5 8 9 10] repectively
+
+O(n) shuffle:
+https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/02.09.md
+
+convex hull:
+https://hellosmallworld123.wordpress.com/2014/08/01/convex-hull-algorithm/
+https://www.youtube.com/watch?v=0HZaRu5IupM
+
+check if a tree is a subtree of another tree:
+https://hellosmallworld123.wordpress.com/2014/07/30/check-if-a-tree-is-the-subtree-of-another-binary-tree/
+
+1/5/2015:
+find the count of triples whose sum is less than a given target
+compare string from stream with a given pattern, using circular buffer, which needs to be implemented from scratch
+design search suggestion (max heap and trie tree)
+given a float matrix and an odd number k, output a matrix with each element has  average value of k*k elements around it (using DP to optimize it)
+write some concurrency code to simulate MapReduce, using Java Callable, etc. Also asked some questions about fault tolerance, eg, how to deal with BadMachineException, how to avoid hiccup that one server returns wrong result.

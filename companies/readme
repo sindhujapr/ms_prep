@@ -1,0 +1,55 @@
+summary of leetcode:
+http://www.mitbbs.co.nz/article_t/JobHunting/32564237.html
+
+https://www.mapr.com/company/careers?gnk=job&gni=8acf169147c369120147c64a21c44d47&gns=Glassdoor
+
+
+http://en.wikipedia.org/wiki/NP-complete
+Knapsack problem
+Hamiltonian path problem
+Travelling salesman problem
+
+counting sort and radix sort:
+http://opendatastructures.org/ods-java/11_2_Counting_Sort_Radix_So.html
+http://www.geeksforgeeks.org/counting-sort/
+
+LIS:
+http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
+113 of http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-12.html
+
+http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
+
+
+http://www.quora.com/How-should-I-prepare-system-design-questions-for-Google-Facebook-Interview
+
+find predecessor of a node in BST:
+http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-10.html
+
+104. Two texts are considered to "match" if they have a common substring of at least length n. Describe an algorithm to determine if two strings are matches.
+http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-11.html
+
+112. Given coins of values 1, 5, 10, 25 and Sum S, give the min number of coins that can represent S.
+http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-12.html
+
+129. Write a function that returns the largest sum you can get by adding together numbers in non-adjacent indices from the array. I.e. you if you include the things stored in arr[i] in your sum, you can't include what is stored in arr[i-1] or arr[i+1].
+http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-13.html
+
+132. Function to compute the number of ways to climb a flight of n steps. Taking 1, 2, or 3 steps at a time. Do it in Linear time and constant space.
+http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-14.html
+
+143. Given a matrix with 1's and 0's, find the number of groups of 1's. A group is defined by horiz/vertically adjacent 1's.
+http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-15.html		floodfill
+
+41. A circus is designing a tower routine consisting of people standing atop one another’s shoulders For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her Given the heights and weights of each  person in the circus, write a method to compute the largest possible number of people in such a tower.
+Example: 
+Input (ht, wt): (65, 100) (70, 150) (56, 90) (75, 190) (60, 95) (68, 110)
+Output:  The  longest  tower  is  length  6  and  includes  from  top  to  bottom:  (56,  90) (60,95) (65,100) (68,110) (70,150) (75,190)
+http://se7so.blogspot.com/2014/01/how-to-prepare-for-interview-4.html		(variation of bin pack, can be converted to LIS problem?)
+
+32. Given an infinite number of quarters (25 cents), dimes (10 cents), nickles (5 cents), and pennies (1 cent), write code to calculate the number of ways of representing N cents.
+33. Same question above but find the least number of coins to represent N cents.		(same as knapsack problem)
+http://se7so.blogspot.com/2014/01/how-to-prepare-for-interview-4.html
+
+http://stackoverflow.com/questions/14368392/radix-sort-vs-counting-sort-vs-bucket-sort-whats-the-difference
+
+https://www.dropbox.com/s/2ve16fdf63gzrhe/Design.txt

@@ -4,11 +4,11 @@ public class KPalindrome {
         int n = a.length();
         int dp[][] = new int[n+1][n+1];
 
-		/*
-		 * In java, we have to go through each array element to set it.
-		 * This results in a time complexity of O(n^2). One solution is
-		 * to only set the elements we need.
-		 */
+        /*
+         * In java, we have to go through each array element to set it.
+         * This results in a time complexity of O(n^2). One solution is
+         * to only set the elements we need.
+         */
         for(int i = 0; i <= n; i++)
             for(int j = 0; j <= n; j++)
                 dp[i][j] = 100000;

@@ -33,7 +33,7 @@ class AA {
 }
 
 class BB extends AA {
-	// This field shadows the one from parent class
+    // This field shadows the one from parent class
     public int x = 6;
     @Override
     public int get() { return x; }

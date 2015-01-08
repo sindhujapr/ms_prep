@@ -7,22 +7,22 @@ package interview.ms;
  */
 public class SumOfArray {
     public static int sum(int[] array) {
-	return sum(array[array.length-1]);
+    return sum(array[array.length-1]);
     }
     
     private static int sum(int value) {
-	int sum = 0;
-	boolean b = (value > 0) && ((sum = value + sum(value-1)) > 0); 
-	return sum;
+    int sum = 0;
+    boolean b = (value > 0) && ((sum = value + sum(value-1)) > 0); 
+    return sum;
     }
     
     
     public static void main(String[] args) {
-	int[] array = new int[100];
-	for (int i = 0; i < array.length; i++) {
-	    array[i] = i+1;
-	}
-	
-	System.out.println(sum(array));
+    int[] array = new int[100];
+    for (int i = 0; i < array.length; i++) {
+        array[i] = i+1;
+    }
+    
+    System.out.println(sum(array));
     }
 }

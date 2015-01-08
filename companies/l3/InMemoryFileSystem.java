@@ -12,34 +12,34 @@ import java.util.regex.Pattern;
 import static interview.l3.Command.*;
 
 public class InMemoryFileSystem {
-	public static void main(String[] args) {
-		FileSystem fs = FileSystem.getInstance();
-		
-		while(true) {
-			System.out.println(fs.getCurrentDirectory() + "> ");
-			
-			List<String> params = parseCommand();
-			fs.execute(params);
-		}
-	}
-	
-	public static List<String> parseCommand() {		
-		List<String> params = new LinkedList<String>();
-		
-		try {
-			BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
-			String commands = bufferRead.readLine();
-			String[] result = commands.split(" ");
+    public static void main(String[] args) {
+        FileSystem fs = FileSystem.getInstance();
+        
+        while(true) {
+            System.out.println(fs.getCurrentDirectory() + "> ");
+            
+            List<String> params = parseCommand();
+            fs.execute(params);
+        }
+    }
+    
+    public static List<String> parseCommand() {     
+        List<String> params = new LinkedList<String>();
+        
+        try {
+            BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+            String commands = bufferRead.readLine();
+            String[] result = commands.split(" ");
 
-			for(String str : result) {
-				String trimed = str.trim();
-				if(!trimed.equals(""))
-					params.add(trimed);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return params;
-	}
+            for(String str : result) {
+                String trimed = str.trim();
+                if(!trimed.equals(""))
+                    params.add(trimed);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return params;
+    }
 }

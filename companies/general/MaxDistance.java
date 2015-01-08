@@ -7,7 +7,7 @@
  */
 public class MaxDistance {
     public static int dist(int[] A) {
-		// it seems that we don't need to track A[i]+i since there is constraint j >= i
+        // it seems that we don't need to track A[i]+i since there is constraint j >= i
         int max1 = A[0];
         int max = 2 * A[0];
         for(int i = 1; i < A.length; i++) {

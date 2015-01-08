@@ -9,10 +9,10 @@ public class ClimbStairs {
     }
 
     /*
-	 * O(lgn). see also:
-	 * http://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
-	 * the matrix solution is tricky. The below one is awesome
-	 */
+     * O(lgn). see also:
+     * http://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+     * the matrix solution is tricky. The below one is awesome
+     */
     public int climbStairs(int n) {
         if(n == 1 || n == 2 || n == 3)
             return n;

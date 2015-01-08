@@ -13,10 +13,10 @@ class BSTNode {
     BSTNode prev, next;
 
     public BSTNode(int value) {
-	this.value = value;
+    this.value = value;
     }
 
     public String toString() {
-	return String.valueOf(value);
+    return String.valueOf(value);
     }
 }

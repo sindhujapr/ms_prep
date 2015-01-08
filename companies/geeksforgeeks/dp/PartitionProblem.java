@@ -5,6 +5,6 @@ package geeksforgeeks.dp;
  */
 public class PartitionProblem {
 
-	// pay attention to both solutions, especially the recursive solution
-	// Nice!!
+    // pay attention to both solutions, especially the recursive solution
+    // Nice!!
 }

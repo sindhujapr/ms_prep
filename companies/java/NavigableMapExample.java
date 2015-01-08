@@ -48,20 +48,20 @@ public class NavigableMapExample {
         List<Integer> list = new ArrayList<Integer>();
         Random rand = new Random();
         for (int i = 0; i < 10000000; i++) {
-			list.add(new Integer(i+1));
-		}
+            list.add(new Integer(i+1));
+        }
         
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10000000; i++) {
-			list.get(i);
-		}
+            list.get(i);
+        }
         long current = System.currentTimeMillis();
         System.out.println(current - start);
         
         start = System.currentTimeMillis();
         for (int i = 0; i < list.size(); i++) {
-			list.get(i);
-		}
+            list.get(i);
+        }
         current = System.currentTimeMillis();
         System.out.println(current - start);
     }    

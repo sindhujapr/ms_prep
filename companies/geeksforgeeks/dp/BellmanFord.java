@@ -11,11 +11,11 @@ package geeksforgeeks.dp;
  *    K edges.
  */
 public class BellmanFord {
-	/*
-	 * To implement this algorithm, it's better to represent the graph with adjacency list
-	 */
-	
-	public static void main(String[] args) {
-		System.out.println(Integer.valueOf(""));
-	}
+    /*
+     * To implement this algorithm, it's better to represent the graph with adjacency list
+     */
+    
+    public static void main(String[] args) {
+        System.out.println(Integer.valueOf(""));
+    }
 }

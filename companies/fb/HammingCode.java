@@ -1,7 +1,7 @@
 
 // http://www.glassdoor.com/Interview/-a-first-write-a-function-to-calculate-the-hamming-distance-between-two-binary-numbers-b-write-a-function-that-takes-QTN_450885.htm
 public class HammingCode {
-	public int hammingDistance(String a, String b) {
+    public int hammingDistance(String a, String b) {
         int res = 0;
         for(int i = 0; i < Math.max(a.length(), b.length()); i++) {
             char ch1 = i >= a.length() ? 0 : a.charAt(a.length()-i-1);

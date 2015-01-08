@@ -15,18 +15,18 @@ Follow up2: How to detect a pattern in the distribution of the random
 integers? Ex. 1,2,3,1,2,3,1,2,3
 */
 public class MyFunc {
-	static Random rand = new Random(1);
-	public static void main(String[] args) {
-		System.out.println(my_func(1, 2));
-		System.out.println(my_func(1, 3));
-		System.out.println(my_func(1, 4));
-		System.out.println(my_func(2, 4));
-		System.out.println(my_func(3, 10));
-	}
+    static Random rand = new Random(1);
+    public static void main(String[] args) {
+        System.out.println(my_func(1, 2));
+        System.out.println(my_func(1, 3));
+        System.out.println(my_func(1, 4));
+        System.out.println(my_func(2, 4));
+        System.out.println(my_func(3, 10));
+    }
 
-	static int my_func(int x, int y) {
-		double d = rand.nextDouble();
-		System.out.print(d + "\t");
-		return x + (int)((y - x) * d);
-	}
+    static int my_func(int x, int y) {
+        double d = rand.nextDouble();
+        System.out.print(d + "\t");
+        return x + (int)((y - x) * d);
+    }
 }

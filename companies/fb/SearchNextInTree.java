@@ -17,7 +17,7 @@ public class SearchNextInTree {
         if(root.val == val) {
             TreeNode node = root.right;
 
-			// this is a corner case. if the node is right-most one
+            // this is a corner case. if the node is right-most one
             if(node == null)
                 return -1;
 

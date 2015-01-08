@@ -15,19 +15,19 @@ public class OneEditDistance {
             return s1.substring(1).equals(s2.substring(1)) || s1.substring(1).equals(s2) || s1.equals(s2.substring(1));
     }
 
-	// not yet carefully verified
+    // not yet carefully verified
     public static boolean oneDistance(String left, String right) {
         String longer = left.length() > right.length() ? left : right;
         String shorter = left.length() > right.length() ? right : left;
 
         for (int i = 0; i < shorter.length(); i++) {
             if (shorter.charAt(i) != longer.charAt(i)) {
-				// we can delete one char from the longer or replace one char from either
+                // we can delete one char from the longer or replace one char from either
                 return shorter.substring(i).equals(longer.substring(i + 1)) || shorter.substring(i+1).equals(longer.substring(i+1));
             }
         }
 
-		// if we matched so far, we still need to check the longer has only one remaining char to delete
+        // if we matched so far, we still need to check the longer has only one remaining char to delete
         return longer.length() == shorter.length()+1;
     }
 }

@@ -23,7 +23,7 @@ public class FindKthNodeBST {
         return root;
     }
 
-	// similar C++ solution http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-10.html
+    // similar C++ solution http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-10.html
     public static void printk(TreeNode root, int k) {
         if(root == null)
             return;

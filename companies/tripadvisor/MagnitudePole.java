@@ -13,15 +13,15 @@ package interview.tripadvisor;
  */
 public class MagnitudePole {
     public int findMagnitudePole(int[] array) {
-	
-	return 0;
+    
+    return 0;
     }
     
     public boolean isMagnitudePole(int[] array, int index) {
-	
+    
     }
     
     public static void main(String[] args) {
-	
+    
     }
 }

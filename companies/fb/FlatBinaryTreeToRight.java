@@ -14,9 +14,9 @@ public class FlatBinaryTreeToRight {
         }
     }
 
-	/*
-	 * Iterative approach. Use prev pointer and inorder traversal
-	 */
+    /*
+     * Iterative approach. Use prev pointer and inorder traversal
+     */
     private static TreeNode prev = null;
     public static TreeNode flat1(TreeNode root) {
         List<TreeNode> list = new ArrayList<TreeNode>();

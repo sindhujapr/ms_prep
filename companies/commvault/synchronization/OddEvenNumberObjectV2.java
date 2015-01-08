@@ -9,82 +9,82 @@ package interview.commvault.synchronization;
  * the way resources are allocated among threads.
  */
 public class OddEvenNumberObjectV2 {
-	private static final int max = 200;
+    private static final int max = 200;
 
-	private static int value = 1;
-	private static Object synObj = new Object();
+    private static int value = 1;
+    private static Object synObj = new Object();
 
-	// Must be volatile for the below performance optimization
-	private static volatile boolean isOdd = true;
+    // Must be volatile for the below performance optimization
+    private static volatile boolean isOdd = true;
 
-	static class OddNumberGenerator implements Runnable {
-		@Override
-		public void run() {
-			while (value < max) {
-				System.out.print(value++ + "\t");
-				
-				synchronized (synObj) {
-					isOdd = false;
-					synObj.notify();
-				}
+    static class OddNumberGenerator implements Runnable {
+        @Override
+        public void run() {
+            while (value < max) {
+                System.out.print(value++ + "\t");
+                
+                synchronized (synObj) {
+                    isOdd = false;
+                    synObj.notify();
+                }
 
-				// performance optimization to avoid synchronization
-				if(!isOdd) {
-					synchronized (synObj) {
-						try {
-							while (!isOdd)
-								synObj.wait();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}
-		}
-	}
+                // performance optimization to avoid synchronization
+                if(!isOdd) {
+                    synchronized (synObj) {
+                        try {
+                            while (!isOdd)
+                                synObj.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-	static class EvenNumberGenerator implements Runnable {
-		@Override
-		public void run() {
-			while (value <= max) {
-				// performance optimization
-				if(isOdd) {
-					synchronized (synObj) {
-						try {
-							while (isOdd)
-								synObj.wait();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-				
-				System.out.println(value++);
-				
-				synchronized (synObj) {
-					isOdd = true;
-					synObj.notify();
-				}
-			}
-		}
-	}
+    static class EvenNumberGenerator implements Runnable {
+        @Override
+        public void run() {
+            while (value <= max) {
+                // performance optimization
+                if(isOdd) {
+                    synchronized (synObj) {
+                        try {
+                            while (isOdd)
+                                synObj.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                
+                System.out.println(value++);
+                
+                synchronized (synObj) {
+                    isOdd = true;
+                    synObj.notify();
+                }
+            }
+        }
+    }
 
-	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
 
-		try {
-			Thread oddThread = new Thread(new OddNumberGenerator());
-			Thread evenThread = new Thread(new EvenNumberGenerator());
-			oddThread.start();
-			evenThread.start();
+        try {
+            Thread oddThread = new Thread(new OddNumberGenerator());
+            Thread evenThread = new Thread(new EvenNumberGenerator());
+            oddThread.start();
+            evenThread.start();
 
-			oddThread.join();
-			evenThread.join();
+            oddThread.join();
+            evenThread.join();
 
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-		System.out.println("total time: " + (System.currentTimeMillis() - start));
-	}
+        System.out.println("total time: " + (System.currentTimeMillis() - start));
+    }
 }

@@ -81,7 +81,7 @@ public class StripedExecutorService extends AbstractExecutorService {
     private State state = State.RUNNING;
 
     private static enum State {
-	RUNNING, SHUTDOWN
+    RUNNING, SHUTDOWN
     }
 
     /**
@@ -93,14 +93,14 @@ public class StripedExecutorService extends AbstractExecutorService {
      *            the executor service that we use to execute the tasks
      */
     private StripedExecutorService(ExecutorService executor) {
-	this.executor = executor;
+    this.executor = executor;
     }
 
     /**
      * This constructs a StripedExecutorService that wraps a cached thread pool.
      */
     public StripedExecutorService() {
-	this(Executors.newCachedThreadPool());
+    this(Executors.newCachedThreadPool());
     }
 
     /**
@@ -108,7 +108,7 @@ public class StripedExecutorService extends AbstractExecutorService {
      * with the given number of threads.
      */
     public StripedExecutorService(int numberOfThreads) {
-	this(Executors.newFixedThreadPool(numberOfThreads));
+    this(Executors.newFixedThreadPool(numberOfThreads));
     }
 
     /**
@@ -117,8 +117,8 @@ public class StripedExecutorService extends AbstractExecutorService {
      * FutureTask.
      */
     protected <T> RunnableFuture<T> newTaskFor(Runnable runnable, T value) {
-	saveStripedObject(runnable);
-	return super.newTaskFor(runnable, value);
+    saveStripedObject(runnable);
+    return super.newTaskFor(runnable, value);
     }
 
     /**
@@ -127,8 +127,8 @@ public class StripedExecutorService extends AbstractExecutorService {
      * FutureTask.
      */
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
-	saveStripedObject(callable);
-	return super.newTaskFor(callable);
+    saveStripedObject(callable);
+    return super.newTaskFor(callable);
     }
 
     /**
@@ -136,23 +136,23 @@ public class StripedExecutorService extends AbstractExecutorService {
      * task into our pool.
      */
     private void saveStripedObject(Object task) {
-	if (isStripedObject(task)) {
-	    stripes.set(((StripedObject) task).getStripe());
-	}
+    if (isStripedObject(task)) {
+        stripes.set(((StripedObject) task).getStripe());
+    }
     }
 
     /**
      * Returns true if the object implements the StripedObject interface.
      */
     private static boolean isStripedObject(Object o) {
-	return o instanceof StripedObject;
+    return o instanceof StripedObject;
     }
 
     /**
      * Delegates the call to submit(task, null).
      */
     public Future<?> submit(Runnable task) {
-	return submit(task, null);
+    return submit(task, null);
     }
 
     /**
@@ -161,17 +161,17 @@ public class StripedExecutorService extends AbstractExecutorService {
      * not running, we throw a RejectedExecutionException.
      */
     public <T> Future<T> submit(Runnable task, T result) {
-	lock.lock();
-	try {
-	    checkPoolIsRunning();
-	    if (isStripedObject(task)) {
-		return super.submit(task, result);
-	    } else { // bypass the serial executors
-		return executor.submit(task, result);
-	    }
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        checkPoolIsRunning();
+        if (isStripedObject(task)) {
+        return super.submit(task, result);
+        } else { // bypass the serial executors
+        return executor.submit(task, result);
+        }
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -180,27 +180,27 @@ public class StripedExecutorService extends AbstractExecutorService {
      * not running, we throw a RejectedExecutionException.
      */
     public <T> Future<T> submit(Callable<T> task) {
-	lock.lock();
-	try {
-	    checkPoolIsRunning();
-	    if (isStripedObject(task)) {
-		return super.submit(task);
-	    } else { // bypass the serial executors
-		return executor.submit(task);
-	    }
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        checkPoolIsRunning();
+        if (isStripedObject(task)) {
+        return super.submit(task);
+        } else { // bypass the serial executors
+        return executor.submit(task);
+        }
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
      * Throws a RejectedExecutionException if the state is not RUNNING.
      */
     private void checkPoolIsRunning() {
-	assert lock.isHeldByCurrentThread();
-	if (state != State.RUNNING) {
-	    throw new RejectedExecutionException("executor not running");
-	}
+    assert lock.isHeldByCurrentThread();
+    if (state != State.RUNNING) {
+        throw new RejectedExecutionException("executor not running");
+    }
     }
 
     /**
@@ -213,23 +213,23 @@ public class StripedExecutorService extends AbstractExecutorService {
      * command to the wrapped ExecutorService directly.
      */
     public void execute(Runnable command) {
-	lock.lock();
-	try {
-	    checkPoolIsRunning();
-	    Object stripe = getStripe(command);
-	    if (stripe != null) {
-		SerialExecutor ser_exec = executors.get(stripe);
-		if (ser_exec == null) {
-		    executors
-			    .put(stripe, ser_exec = new SerialExecutor(stripe));
-		}
-		ser_exec.execute(command);
-	    } else {
-		executor.execute(command);
-	    }
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        checkPoolIsRunning();
+        Object stripe = getStripe(command);
+        if (stripe != null) {
+        SerialExecutor ser_exec = executors.get(stripe);
+        if (ser_exec == null) {
+            executors
+                .put(stripe, ser_exec = new SerialExecutor(stripe));
+        }
+        ser_exec.execute(command);
+        } else {
+        executor.execute(command);
+        }
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -238,14 +238,14 @@ public class StripedExecutorService extends AbstractExecutorService {
      * Result may be null.
      */
     private Object getStripe(Runnable command) {
-	Object stripe;
-	if (command instanceof StripedObject) {
-	    stripe = (((StripedObject) command).getStripe());
-	} else {
-	    stripe = stripes.get();
-	}
-	stripes.remove();
-	return stripe;
+    Object stripe;
+    if (command instanceof StripedObject) {
+        stripe = (((StripedObject) command).getStripe());
+    } else {
+        stripe = stripes.get();
+    }
+    stripes.remove();
+    return stripe;
     }
 
     /**
@@ -254,15 +254,15 @@ public class StripedExecutorService extends AbstractExecutorService {
      * executor.
      */
     public void shutdown() {
-	lock.lock();
-	try {
-	    state = State.SHUTDOWN;
-	    if (executors.isEmpty()) {
-		executor.shutdown();
-	    }
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        state = State.SHUTDOWN;
+        if (executors.isEmpty()) {
+        executor.shutdown();
+        }
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -272,18 +272,18 @@ public class StripedExecutorService extends AbstractExecutorService {
      * executor is called.
      */
     public List<Runnable> shutdownNow() {
-	lock.lock();
-	try {
-	    shutdown();
-	    List<Runnable> result = new ArrayList<>();
-	    for (SerialExecutor ser_ex : executors.values()) {
-		ser_ex.tasks.drainTo(result);
-	    }
-	    result.addAll(executor.shutdownNow());
-	    return result;
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        shutdown();
+        List<Runnable> result = new ArrayList<>();
+        for (SerialExecutor ser_ex : executors.values()) {
+        ser_ex.tasks.drainTo(result);
+        }
+        result.addAll(executor.shutdownNow());
+        return result;
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -291,12 +291,12 @@ public class StripedExecutorService extends AbstractExecutorService {
      * otherwise.
      */
     public boolean isShutdown() {
-	lock.lock();
-	try {
-	    return state == State.SHUTDOWN;
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        return state == State.SHUTDOWN;
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -305,18 +305,18 @@ public class StripedExecutorService extends AbstractExecutorService {
      * terminated.
      */
     public boolean isTerminated() {
-	lock.lock();
-	try {
-	    if (state == State.RUNNING)
-		return false;
-	    for (SerialExecutor executor : executors.values()) {
-		if (!executor.isEmpty())
-		    return false;
-	    }
-	    return executor.isTerminated();
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        if (state == State.RUNNING)
+        return false;
+        for (SerialExecutor executor : executors.values()) {
+        if (!executor.isEmpty())
+            return false;
+        }
+        return executor.isTerminated();
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -324,28 +324,28 @@ public class StripedExecutorService extends AbstractExecutorService {
      * allotted amount of time.
      */
     public boolean awaitTermination(long timeout, TimeUnit unit)
-	    throws InterruptedException {
-	lock.lock();
-	try {
-	    long waitUntil = System.nanoTime() + unit.toNanos(timeout);
-	    long remainingTime;
-	    /**
-	     * Avoid spurious wakeup!
-	     */
-	    while ((remainingTime = waitUntil - System.nanoTime()) > 0
-		    && !executors.isEmpty()) {
-		terminating.awaitNanos(remainingTime);
-	    }
-	    if (remainingTime <= 0)
-		return false;
-	    if (executors.isEmpty()) {
-		return executor.awaitTermination(remainingTime,
-			TimeUnit.NANOSECONDS);
-	    }
-	    return false;
-	} finally {
-	    lock.unlock();
-	}
+        throws InterruptedException {
+    lock.lock();
+    try {
+        long waitUntil = System.nanoTime() + unit.toNanos(timeout);
+        long remainingTime;
+        /**
+         * Avoid spurious wakeup!
+         */
+        while ((remainingTime = waitUntil - System.nanoTime()) > 0
+            && !executors.isEmpty()) {
+        terminating.awaitNanos(remainingTime);
+        }
+        if (remainingTime <= 0)
+        return false;
+        if (executors.isEmpty()) {
+        return executor.awaitTermination(remainingTime,
+            TimeUnit.NANOSECONDS);
+        }
+        return false;
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -354,15 +354,15 @@ public class StripedExecutorService extends AbstractExecutorService {
      * necessary, but at least we can avoid a memory leak.
      */
     private void removeEmptySerialExecutor(Object stripe, SerialExecutor ser_ex) {
-	assert ser_ex == executors.get(stripe);
-	assert lock.isHeldByCurrentThread();
-	assert ser_ex.isEmpty();
+    assert ser_ex == executors.get(stripe);
+    assert lock.isHeldByCurrentThread();
+    assert ser_ex.isEmpty();
 
-	executors.remove(stripe);
-	terminating.signalAll();
-	if (state == State.SHUTDOWN && executors.isEmpty()) {
-	    executor.shutdown();
-	}
+    executors.remove(stripe);
+    terminating.signalAll();
+    if (state == State.SHUTDOWN && executors.isEmpty()) {
+        executor.shutdown();
+    }
     }
 
     /**
@@ -370,14 +370,14 @@ public class StripedExecutorService extends AbstractExecutorService {
      * executor and the serial executors.
      */
     public String toString() {
-	lock.lock();
-	try {
-	    return "StripedExecutorService: state=" + state + ", "
-		    + "executor=" + executor + ", " + "serialExecutors="
-		    + executors;
-	} finally {
-	    lock.unlock();
-	}
+    lock.lock();
+    try {
+        return "StripedExecutorService: state=" + state + ", "
+            + "executor=" + executor + ", " + "serialExecutors="
+            + executors;
+    } finally {
+        lock.unlock();
+    }
     }
 
     /**
@@ -394,103 +394,103 @@ public class StripedExecutorService extends AbstractExecutorService {
      * queue is empty.
      */
     private class SerialExecutor implements Executor {
-	/**
-	 * The queue of unexecuted tasks.
-	 */
-	private final BlockingQueue<Runnable> tasks = new LinkedBlockingQueue<>();
-	/**
-	 * The runnable that we are currently busy with.
-	 */
-	private Runnable active;
-	/**
-	 * The stripe that this SerialExecutor was defined for. It is needed so
-	 * that we can remove this executor from the map once it is empty.
-	 */
-	private final Object stripe;
+    /**
+     * The queue of unexecuted tasks.
+     */
+    private final BlockingQueue<Runnable> tasks = new LinkedBlockingQueue<>();
+    /**
+     * The runnable that we are currently busy with.
+     */
+    private Runnable active;
+    /**
+     * The stripe that this SerialExecutor was defined for. It is needed so
+     * that we can remove this executor from the map once it is empty.
+     */
+    private final Object stripe;
 
-	/**
-	 * Creates a SerialExecutor for a particular stripe.
-	 */
-	private SerialExecutor(Object stripe) {
-	    this.stripe = stripe;
-	    if (DEBUG) {
-		System.out.println("SerialExecutor created " + stripe);
-	    }
-	}
+    /**
+     * Creates a SerialExecutor for a particular stripe.
+     */
+    private SerialExecutor(Object stripe) {
+        this.stripe = stripe;
+        if (DEBUG) {
+        System.out.println("SerialExecutor created " + stripe);
+        }
+    }
 
-	/**
-	 * We use finalize() only for debugging purposes. If DEBUG==false, the
-	 * body of the method will be compiled away, thus rendering it a trivial
-	 * finalize() method, which means that the object will not incur any
-	 * overhead since it won't be registered with the Finalizer.
-	 */
-	protected void finalize() throws Throwable {
-	    if (DEBUG) {
-		System.out.println("SerialExecutor finalized " + stripe);
-		super.finalize();
-	    }
-	}
+    /**
+     * We use finalize() only for debugging purposes. If DEBUG==false, the
+     * body of the method will be compiled away, thus rendering it a trivial
+     * finalize() method, which means that the object will not incur any
+     * overhead since it won't be registered with the Finalizer.
+     */
+    protected void finalize() throws Throwable {
+        if (DEBUG) {
+        System.out.println("SerialExecutor finalized " + stripe);
+        super.finalize();
+        }
+    }
 
-	/**
-	 * For every task that is executed, we add() a wrapper to the queue of
-	 * tasks that will run the current task and then schedule the next task
-	 * in the queue.
-	 */
-	public void execute(final Runnable r) {
-	    lock.lock();
-	    try {
-		tasks.add(new Runnable() {
-		    public void run() {
-			try {
-			    r.run();
-			} finally {
-			    scheduleNext();
-			}
-		    }
-		});
-		if (active == null) {
-		    scheduleNext();
-		}
-	    } finally {
-		lock.unlock();
-	    }
-	}
+    /**
+     * For every task that is executed, we add() a wrapper to the queue of
+     * tasks that will run the current task and then schedule the next task
+     * in the queue.
+     */
+    public void execute(final Runnable r) {
+        lock.lock();
+        try {
+        tasks.add(new Runnable() {
+            public void run() {
+            try {
+                r.run();
+            } finally {
+                scheduleNext();
+            }
+            }
+        });
+        if (active == null) {
+            scheduleNext();
+        }
+        } finally {
+        lock.unlock();
+        }
+    }
 
-	/**
-	 * Schedules the next task for this stripe. Should only be called if
-	 * active == null or if we are finished executing the currently active
-	 * task.
-	 */
-	private void scheduleNext() {
-	    lock.lock();
-	    try {
-		if ((active = tasks.poll()) != null) {
-		    executor.execute(active);
-		    terminating.signalAll();
-		} else {
-		    removeEmptySerialExecutor(stripe, this);
-		}
-	    } finally {
-		lock.unlock();
-	    }
-	}
+    /**
+     * Schedules the next task for this stripe. Should only be called if
+     * active == null or if we are finished executing the currently active
+     * task.
+     */
+    private void scheduleNext() {
+        lock.lock();
+        try {
+        if ((active = tasks.poll()) != null) {
+            executor.execute(active);
+            terminating.signalAll();
+        } else {
+            removeEmptySerialExecutor(stripe, this);
+        }
+        } finally {
+        lock.unlock();
+        }
+    }
 
-	/**
-	 * Returns true if the list is empty and there is no task currently
-	 * executing.
-	 */
-	public boolean isEmpty() {
-	    lock.lock();
-	    try {
-		return active == null && tasks.isEmpty();
-	    } finally {
-		lock.unlock();
-	    }
-	}
+    /**
+     * Returns true if the list is empty and there is no task currently
+     * executing.
+     */
+    public boolean isEmpty() {
+        lock.lock();
+        try {
+        return active == null && tasks.isEmpty();
+        } finally {
+        lock.unlock();
+        }
+    }
 
-	public String toString() {
-	    assert lock.isHeldByCurrentThread();
-	    return "SerialExecutor: active=" + active + ", " + "tasks=" + tasks;
-	}
+    public String toString() {
+        assert lock.isHeldByCurrentThread();
+        return "SerialExecutor: active=" + active + ", " + "tasks=" + tasks;
+    }
     }
 }

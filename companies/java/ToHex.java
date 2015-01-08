@@ -11,8 +11,8 @@ public class ToHex {
         return ( s.length() == 1 ) ? "0" + s : s;
     }
     
-	public static void main(String[] args) throws Exception {
-		char chs[] = {'a', 'b', 'c' };
-		System.out.println(formatRGB(chs[0], chs[1], chs[2]));
-	}
+    public static void main(String[] args) throws Exception {
+        char chs[] = {'a', 'b', 'c' };
+        System.out.println(formatRGB(chs[0], chs[1], chs[2]));
+    }
 }

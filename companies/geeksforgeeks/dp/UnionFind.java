@@ -10,5 +10,5 @@ package geeksforgeeks.dp;
  * union operation. 
  */
 public class UnionFind {
-	
+    
 }

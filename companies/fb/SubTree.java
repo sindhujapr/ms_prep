@@ -17,11 +17,11 @@ public class SubTree {
         Set<Integer> left = subtrees(root.left, res);
         Set<Integer> right = subtrees(root.right, res);
 
-		/*
-		 * we need to make sure the current node doesn't duplicate with any node
-		 * in the left/right child tree. Also left and right child trees don't
-		 * have any duplicate.
-		 */
+        /*
+         * we need to make sure the current node doesn't duplicate with any node
+         * in the left/right child tree. Also left and right child trees don't
+         * have any duplicate.
+         */
         if(!left.contains(root.val) && !right.contains(root.val)) {
             Set<Integer> temp = new HashSet<Integer>(left);
             temp.removeAll(right);

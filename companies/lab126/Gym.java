@@ -23,15 +23,15 @@ import java.util.List;
  *        19
  */
 public class Gym {
-	// member variables:
+    // member variables:
     private final char[][] matrix;
     // methods:
     public Gym(char[][] matrix) {
-    	this.matrix = matrix;
+        this.matrix = matrix;
     }
     
     public int dist(int start_row, int start_col, int end_row, int end_col) {
-    	// Write implementation on this one, step by step approach
+        // Write implementation on this one, step by step approach
         int m = matrix.length, n = matrix[0].length;
         int step = 0;
         List<Integer> list = new ArrayList<Integer>();

@@ -7,11 +7,11 @@ import java.util.concurrent.Executors;
 /** Main class for control test. */
 public class CPUHog {
    public static void main(String[] args) {
-	   ExecutorService executor = Executors.newCachedThreadPool();
-	   
-	   executor.submit(new Slouch());
-	   executor.submit(new WorkingStiff());
-	   executor.submit(new Workaholic());
+       ExecutorService executor = Executors.newCachedThreadPool();
+       
+       executor.submit(new Slouch());
+       executor.submit(new WorkingStiff());
+       executor.submit(new Workaholic());
    }
 }
 

@@ -9,9 +9,9 @@ class Type11 {
 
 class Type22 {
     public static void main(String[] args) {
-    	Type22 t = new Type22();
-    	System.out.println(t instanceof Type22);
-    	// Doesn't compile. Type22 and String must be one another's subtype
+        Type22 t = new Type22();
+        System.out.println(t instanceof Type22);
+        // Doesn't compile. Type22 and String must be one another's subtype
 //        System.out.println(t instanceof String);
     }
 }

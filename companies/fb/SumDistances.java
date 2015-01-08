@@ -46,13 +46,13 @@ public class SumDistances {
         return root;
     }
 
-	/*
-	 * See comment in http://blog.csdn.net/sigh1988/article/details/9752619
-	 * Scan the tree twice:
-	 * 1. count the number of (child, including itself) nodes for each node
-	 * 2. for each edge, it will be used count(node.left) * (n-count(node.left)) times.
-	 * Thus it contributes such number of times to the total distance.
-	 */ 
+    /*
+     * See comment in http://blog.csdn.net/sigh1988/article/details/9752619
+     * Scan the tree twice:
+     * 1. count the number of (child, including itself) nodes for each node
+     * 2. for each edge, it will be used count(node.left) * (n-count(node.left)) times.
+     * Thus it contributes such number of times to the total distance.
+     */ 
     public static int sumDistance(TreeNode root) {
         Map<TreeNode, Integer> map = new HashMap<TreeNode, Integer>();
 

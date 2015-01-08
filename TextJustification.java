@@ -3,10 +3,10 @@ package lc;
 import java.util.ArrayList;
 
 public class TextJustification {
-	/*
-	 * another version:
-	 * http://gongxuns.blogspot.com/2012/12/leetcodetext-justification.html
-	 */
+    /*
+     * another version:
+     * http://gongxuns.blogspot.com/2012/12/leetcodetext-justification.html
+     */
     public ArrayList<String> fullJustify(String[] words, int L) {
         ArrayList<String> result = new ArrayList<String>();
         if(words == null || words.length == 0)

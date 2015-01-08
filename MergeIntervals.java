@@ -6,41 +6,41 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 class Interval {
-	int start;
-	int end;
+    int start;
+    int end;
 
-	Interval() {
-		start = 0;
-		end = 0;
-	}
+    Interval() {
+        start = 0;
+        end = 0;
+    }
 
-	Interval(int s, int e) {
-		start = s;
-		end = e;
-	}
-	
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append('[');
-		sb.append(start);
-		sb.append(',');
-		sb.append(end);
-		sb.append(']');
-		return sb.toString();
-	}
+    Interval(int s, int e) {
+        start = s;
+        end = e;
+    }
+    
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        sb.append(start);
+        sb.append(',');
+        sb.append(end);
+        sb.append(']');
+        return sb.toString();
+    }
 }
 
 public class MergeIntervals {
-	public static void main(String[] args) {
-		ArrayList<Interval> intervals = new ArrayList<Interval>();
-		intervals.add(new Interval(1, 3));
-		ArrayList<Interval> result = new MergeIntervals().merge(intervals);
-		for (Interval interval : result) {
-			System.out.println(interval.start + ", " + interval.end);
-		}
-	}
+    public static void main(String[] args) {
+        ArrayList<Interval> intervals = new ArrayList<Interval>();
+        intervals.add(new Interval(1, 3));
+        ArrayList<Interval> result = new MergeIntervals().merge(intervals);
+        for (Interval interval : result) {
+            System.out.println(interval.start + ", " + interval.end);
+        }
+    }
 
-	// my latest code
+    // my latest code
     public List<Interval> merge(List<Interval> intervals) {
         qsort(intervals, 0, intervals.size()-1);
         
@@ -83,34 +83,34 @@ public class MergeIntervals {
         intervals.get(j).end = end;
     }
 
-	/*
-	 * better than my code. The intervals need to be sorted to gain
-	 * better performance.
-	 */
-	public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
-		Collections.sort(intervals, new Comparator<Interval>() {
-			@Override
-			public int compare(Interval a, Interval b) {
-				return a.start > b.start ? 1 : (a.start == b.start ? 0 : -1);
-			}
-		});
+    /*
+     * better than my code. The intervals need to be sorted to gain
+     * better performance.
+     */
+    public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
+        Collections.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval a, Interval b) {
+                return a.start > b.start ? 1 : (a.start == b.start ? 0 : -1);
+            }
+        });
 
-		ArrayList<Interval> res = new ArrayList<Interval>();
+        ArrayList<Interval> res = new ArrayList<Interval>();
 
-		int i = 0;
-		while (i < intervals.size()) {
-			int j = i + 1;
-			int end = intervals.get(i).end;
-			while (j < intervals.size() && end >= intervals.get(j).start) {
-				end = Math.max(end, intervals.get(j).end);
-				j++;
-			}
-			res.add(new Interval(intervals.get(i).start, end));
-			i = j;
-		}
+        int i = 0;
+        while (i < intervals.size()) {
+            int j = i + 1;
+            int end = intervals.get(i).end;
+            while (j < intervals.size() && end >= intervals.get(j).start) {
+                end = Math.max(end, intervals.get(j).end);
+                j++;
+            }
+            res.add(new Interval(intervals.get(i).start, end));
+            i = j;
+        }
 
-		return res;
-	}
+        return res;
+    }
 
     public ArrayList<Interval> merge1(ArrayList<Interval> intervals) {
         assert intervals != null;
@@ -142,49 +142,49 @@ public class MergeIntervals {
         return intervals;
     }
     
-	public ArrayList<Interval> merge2(ArrayList<Interval> intervals) {
-		ArrayList<Interval> result = new ArrayList<Interval>();
-		if (intervals == null || intervals.size() == 0)
-			return result;
+    public ArrayList<Interval> merge2(ArrayList<Interval> intervals) {
+        ArrayList<Interval> result = new ArrayList<Interval>();
+        if (intervals == null || intervals.size() == 0)
+            return result;
 
-		Interval next = findNext(intervals);
-		while (next != null) {
-			if (result.size() == 0) {
-				result.add(next);
-			} else {
-				Interval last = result.get(result.size() - 1);
-				if (last.end >= next.start) {
-					result.remove(result.size() - 1);
-					result.add(new Interval(last.start,
-							next.end > last.end ? next.end : last.end));
-				} else {
-					result.add(next);
-				}
+        Interval next = findNext(intervals);
+        while (next != null) {
+            if (result.size() == 0) {
+                result.add(next);
+            } else {
+                Interval last = result.get(result.size() - 1);
+                if (last.end >= next.start) {
+                    result.remove(result.size() - 1);
+                    result.add(new Interval(last.start,
+                            next.end > last.end ? next.end : last.end));
+                } else {
+                    result.add(next);
+                }
 
-				next = findNext(intervals);
-			}
-		}
-		return result;
-	}
+                next = findNext(intervals);
+            }
+        }
+        return result;
+    }
 
-	private Interval findNext(ArrayList<Interval> intervals) {
-		Interval ret = null;
-		int index = -1;
-		for (int i = 0; i < intervals.size(); i++) {
-			Interval interval = intervals.get(i);
-			if (ret == null) {
-				ret = interval;
-				index = i;
-			} else {
-				if (ret.start > interval.start
-						|| (ret.start == interval.start && ret.end > interval.end)) {
-					ret = interval;
-					index = i;
-				}
-			}
-		}
-		if (index >= 0 && index < intervals.size())
-			intervals.remove(index);
-		return ret;
-	}
+    private Interval findNext(ArrayList<Interval> intervals) {
+        Interval ret = null;
+        int index = -1;
+        for (int i = 0; i < intervals.size(); i++) {
+            Interval interval = intervals.get(i);
+            if (ret == null) {
+                ret = interval;
+                index = i;
+            } else {
+                if (ret.start > interval.start
+                        || (ret.start == interval.start && ret.end > interval.end)) {
+                    ret = interval;
+                    index = i;
+                }
+            }
+        }
+        if (index >= 0 && index < intervals.size())
+            intervals.remove(index);
+        return ret;
+    }
 }

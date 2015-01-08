@@ -57,9 +57,9 @@ public class LRUCache {
      * entry may be new (prev = next = null) or from the existing linked list
      */
     private void enQueue(Entry entry) {
-    	if(entry == head)
-    		return;
-    	
+        if(entry == head)
+            return;
+        
         if(head == null) {
             head = tail = entry;
             return;
@@ -80,12 +80,12 @@ public class LRUCache {
     }
     
     public static void main(String[] args) {
-		LRUCache cache = new LRUCache(2);
-		cache.set(2,1);
-		cache.set(2,2);
-		System.out.println(cache.get(2));
-		cache.set(1,1);
-		cache.set(4,1);
-		System.err.println(cache.get(2));
-	}
+        LRUCache cache = new LRUCache(2);
+        cache.set(2,1);
+        cache.set(2,2);
+        System.out.println(cache.get(2));
+        cache.set(1,1);
+        cache.set(4,1);
+        System.err.println(cache.get(2));
+    }
 }

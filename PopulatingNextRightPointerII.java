@@ -1,16 +1,16 @@
 package lc;
 
 public class PopulatingNextRightPointerII {
-	public static void main(String[] args) {
-		TreeLinkNode root = new TreeLinkNode(1);
-		root.left = new TreeLinkNode(2);
-//		root.right = new TreeLinkNode(3);
+    public static void main(String[] args) {
+        TreeLinkNode root = new TreeLinkNode(1);
+        root.left = new TreeLinkNode(2);
+//      root.right = new TreeLinkNode(3);
 
-//		new PopulatingNextRightPointerII().connect(root);
-		new PopulatingNextRightPointerII().connect1(root);
-	}
+//      new PopulatingNextRightPointerII().connect(root);
+        new PopulatingNextRightPointerII().connect1(root);
+    }
 
-	public void connect1(TreeLinkNode root) {
+    public void connect1(TreeLinkNode root) {
         if(root == null)
             return;
         
@@ -49,8 +49,8 @@ public class PopulatingNextRightPointerII {
                     temp = temp.next;
             }
         }
-	}
-	
+    }
+    
     public void connect(TreeLinkNode root) {
         if(root == null)
             return;

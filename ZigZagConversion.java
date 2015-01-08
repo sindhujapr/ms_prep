@@ -1,14 +1,14 @@
 package lc;
 
 public class ZigZagConversion {
-	public static void main(String[] args) {
-		ZigZagConversion instance = new ZigZagConversion();
-		System.out.println(instance.convert("", 1));
-	}
-	
+    public static void main(String[] args) {
+        ZigZagConversion instance = new ZigZagConversion();
+        System.out.println(instance.convert("", 1));
+    }
+    
     public String convert(String s, int nRows) {
-    	if(nRows == 1)
-    		return s;
+        if(nRows == 1)
+            return s;
    
         int num = s.length()/(nRows+nRows-2) + 1;
         int nCols = num * (1+nRows-2);

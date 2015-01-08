@@ -1,21 +1,21 @@
 package lc;
 
 public class TrappingRainWater {
-	public static void main(String[] args) {
-		System.out.println(new TrappingRainWater().trap1(new int[] { 3,1,2,4,0,5,1 }));
-		
-		String[] array = "1,2,3,4,5,5,".split(",");
-		int[] res = new int[array.length];
-		for(int i = 0; i < array.length; i++)
-			res[i] = Integer.valueOf(array[i]);
-		
-		for(int val : res)
-			System.out.println(val);
-	}
-	
+    public static void main(String[] args) {
+        System.out.println(new TrappingRainWater().trap1(new int[] { 3,1,2,4,0,5,1 }));
+        
+        String[] array = "1,2,3,4,5,5,".split(",");
+        int[] res = new int[array.length];
+        for(int i = 0; i < array.length; i++)
+            res[i] = Integer.valueOf(array[i]);
+        
+        for(int val : res)
+            System.out.println(val);
+    }
+    
     public int trap(int[] A) {
-		if (A == null || A.length < 3)
-			return 0;
+        if (A == null || A.length < 3)
+            return 0;
 
         int[] left = new int[A.length];
         int[] right = new int[A.length];
@@ -32,8 +32,8 @@ public class TrappingRainWater {
                 sum += height-A[i];
         }
 
-		return sum;
-	}
+        return sum;
+    }
     
     /*
      * Even less memory footprint:
@@ -67,30 +67,30 @@ public class TrappingRainWater {
         return total;
     }
     
-	/*
-	 * A little better since memory footprint is reduced.
-	 * http://gongxuns.blogspot.com/2012/12/leetcodetrapping-rain-water.html
-	 */
-	public int trap2(int[] A) {
-		int res = 0;
-		if (A.length < 3)
-			return res;
+    /*
+     * A little better since memory footprint is reduced.
+     * http://gongxuns.blogspot.com/2012/12/leetcodetrapping-rain-water.html
+     */
+    public int trap2(int[] A) {
+        int res = 0;
+        if (A.length < 3)
+            return res;
 
-		int[] left = new int[A.length - 2];
-		int[] right = new int[A.length - 2];
-		for (int i = 0; i < A.length - 2; i++)
-			left[i] = i > 0 ? Math.max(left[i - 1], A[i]) : A[i];
+        int[] left = new int[A.length - 2];
+        int[] right = new int[A.length - 2];
+        for (int i = 0; i < A.length - 2; i++)
+            left[i] = i > 0 ? Math.max(left[i - 1], A[i]) : A[i];
 
-		for (int i = A.length - 3; i >= 0; i--)
-			right[i] = i < A.length - 3 ? Math.max(right[i + 1], A[i + 2])
-					: A[i + 2];
+        for (int i = A.length - 3; i >= 0; i--)
+            right[i] = i < A.length - 3 ? Math.max(right[i + 1], A[i + 2])
+                    : A[i + 2];
 
-		for (int i = 0; i < A.length - 2; i++) {
-			int temp = Math.min(left[i], right[i]);
-			if (temp > A[i + 1])
-				res += temp - A[i + 1];
-		}
+        for (int i = 0; i < A.length - 2; i++) {
+            int temp = Math.min(left[i], right[i]);
+            if (temp > A[i + 1])
+                res += temp - A[i + 1];
+        }
 
-		return res;
-	}
+        return res;
+    }
 }

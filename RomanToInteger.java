@@ -1,29 +1,29 @@
 package lc;
 
 public class RomanToInteger {
-	// http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-9.html
+    // http://se7so.blogspot.com/2014/02/how-to-prepare-for-interview-9.html
     public int romanToInt(String num) {
         Map<Character, Integer> mp = new HashMap<Character, Integer>();
         mp.put('M', 1000);
-    	mp.put('D', 500);
-    	mp.put('C', 100);
-    	mp.put('L', 50);
-    	mp.put('X', 10);
-    	mp.put('V', 5);
-    	mp.put('I', 1);
-    	
-    	char prev = 'Z';
-    	int res = 0;
-    	for(int i = 0; i < num.length(); i++) {
-    		res += mp.get(num.charAt(i));
-    		
-    		if(prev != 'Z' && mp.get(prev) < mp.get(num.charAt(i)))
-    			res = res - 2 * mp.get(prev);
+        mp.put('D', 500);
+        mp.put('C', 100);
+        mp.put('L', 50);
+        mp.put('X', 10);
+        mp.put('V', 5);
+        mp.put('I', 1);
+        
+        char prev = 'Z';
+        int res = 0;
+        for(int i = 0; i < num.length(); i++) {
+            res += mp.get(num.charAt(i));
+            
+            if(prev != 'Z' && mp.get(prev) < mp.get(num.charAt(i)))
+                res = res - 2 * mp.get(prev);
      
-    		prev = num.charAt(i);
-    	}
-    	
-    	return res;
+            prev = num.charAt(i);
+        }
+        
+        return res;
     }
 
     public int romanToInt(String s) {

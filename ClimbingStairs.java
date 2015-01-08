@@ -1,40 +1,40 @@
 package lc;
 
 public class ClimbingStairs {
-	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
-			ClimbingStairs instance = new ClimbingStairs();
-			System.out.println(instance.climbStairs(i + 1));
-		}
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            ClimbingStairs instance = new ClimbingStairs();
+            System.out.println(instance.climbStairs(i + 1));
+        }
 
-		System.out.println(new ClimbingStairs().climbStairs(2));
-	}
+        System.out.println(new ClimbingStairs().climbStairs(2));
+    }
 
-	public int climbStairs(int n) {
+    public int climbStairs(int n) {
 
-		if (n == 1)
-			return 1;
-		if (n == 2)
-			return 2;
+        if (n == 1)
+            return 1;
+        if (n == 2)
+            return 2;
 
-		int fn1 = 1;
-		int fn2 = 2;
-		int fn = 0;
-		n -= 2;
+        int fn1 = 1;
+        int fn2 = 2;
+        int fn = 0;
+        n -= 2;
 
-		while (n > 0) {
-			n--;
-			fn = fn1 + fn2;
-			fn1 = fn2;
-			fn2 = fn;
-		}
+        while (n > 0) {
+            n--;
+            fn = fn1 + fn2;
+            fn1 = fn2;
+            fn2 = fn;
+        }
 
-		return fn;
-	}
-	
+        return fn;
+    }
+    
     public int climbStairs2(int n) {
-    	assert n > 0;
-    	
+        assert n > 0;
+        
         if(n == 1)
             return 1;
         

@@ -1,10 +1,10 @@
 package lc2;
 
 public class ValidPalindrome {
-	public static void main(String[] args) {
-		System.out.println(new ValidPalindrome().isPalindrome("1a2"));
-	}
-	
+    public static void main(String[] args) {
+        System.out.println(new ValidPalindrome().isPalindrome("1a2"));
+    }
+    
     public boolean isPalindrome(String s) {
         int low = 0;
         int high = s.length()-1;

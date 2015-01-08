@@ -1,12 +1,12 @@
 package lc;
 
 public class ImplementStrstr {
-	public static void main(String[] args) {
-		System.out.println(new ImplementStrstr().strStr("abacabad", "caab"));
-	}
-	/*
-	 * code copied from KMP.java
-	 */
+    public static void main(String[] args) {
+        System.out.println(new ImplementStrstr().strStr("abacabad", "caab"));
+    }
+    /*
+     * code copied from KMP.java
+     */
     public String strStr(String haystack, String needle) {
         assert haystack != null && needle != null;
         if(needle.length() == 0)

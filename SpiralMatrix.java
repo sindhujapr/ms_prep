@@ -3,14 +3,14 @@ package lc;
 import java.util.ArrayList;
 
 public class SpiralMatrix {
-	public static void main(String[] args) {
-		SpiralMatrix instance = new SpiralMatrix();
-		int[][] matrix = {{7}, {9}, {6}};
-		ArrayList<Integer> result = instance.spiralOrder(matrix);
-		for(Integer value : result)
-			System.out.print(value + ", ");
-	}
-	
+    public static void main(String[] args) {
+        SpiralMatrix instance = new SpiralMatrix();
+        int[][] matrix = {{7}, {9}, {6}};
+        ArrayList<Integer> result = instance.spiralOrder(matrix);
+        for(Integer value : result)
+            System.out.print(value + ", ");
+    }
+    
     public ArrayList<Integer> spiralOrder(int[][] matrix) {
         assert matrix != null;
         

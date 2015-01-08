@@ -4,10 +4,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SudokuSolver {
-	/*
-	 * optimized from:
-	 * http://gongxuns.blogspot.com/2012/12/leetcode-sudoku-solver.html
-	 */
+    /*
+     * optimized from:
+     * http://gongxuns.blogspot.com/2012/12/leetcode-sudoku-solver.html
+     */
     public boolean solveSudoku(char[][] board) {
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
@@ -55,7 +55,7 @@ public class SudokuSolver {
         return true;
     }
 
-	// optimized from the above implementation
+    // optimized from the above implementation
     public void solveSudoku(char[][] board) {   
         if(board == null || board.length != 9 || board[0].length !=9)  
             return;  

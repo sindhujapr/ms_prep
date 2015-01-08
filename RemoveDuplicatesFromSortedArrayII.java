@@ -1,15 +1,15 @@
 package lc;
 
 public class RemoveDuplicatesFromSortedArrayII {
-	public static void main(String[] args) {
-		RemoveDuplicatesFromSortedArrayII instance = new RemoveDuplicatesFromSortedArrayII();
-		int A[] = {1, 1, 1, 1, 3, 3};
-		int size = instance.removeDuplicates(A);
-		for(int i = 0; i < size; i++)
-			System.out.print(A[i] + ", ");
-	}
-	
-	// my latest code
+    public static void main(String[] args) {
+        RemoveDuplicatesFromSortedArrayII instance = new RemoveDuplicatesFromSortedArrayII();
+        int A[] = {1, 1, 1, 1, 3, 3};
+        int size = instance.removeDuplicates(A);
+        for(int i = 0; i < size; i++)
+            System.out.print(A[i] + ", ");
+    }
+    
+    // my latest code
     public int removeDuplicates(int[] A) {
         if(A == null || A.length == 0)
             return 0;

@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CombinationSum {
-	public static void main(String[] args) {
-		ArrayList<ArrayList<Integer>> res = new CombinationSum().combinationSum(new int[]{1, 2, 2, 3}, 5);
-		for(ArrayList<Integer> tmp : res)
-			System.out.println(tmp);
-	}
+    public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> res = new CombinationSum().combinationSum(new int[]{1, 2, 2, 3}, 5);
+        for(ArrayList<Integer> tmp : res)
+            System.out.println(tmp);
+    }
 
-	/*
-	 * my own code, which is more concise
-	 */
+    /*
+     * my own code, which is more concise
+     */
     public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
-    	assert candidates != null;
+        assert candidates != null;
 
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         Arrays.sort(candidates);
@@ -46,43 +46,43 @@ public class CombinationSum {
         }
     }
 
-	/*
-	 * http://gongxuns.blogspot.com/2012/12/leetcodecombination-sum.html
-	 */
-	public ArrayList<ArrayList<Integer>> combinationSum1(int[] candidates,
-			int target) {
-		Arrays.sort(candidates);
-		ArrayList<ArrayList<Integer>> prev = new ArrayList<ArrayList<Integer>>();
-		prev.add(new ArrayList<Integer>());
-		
-		return combinationSum1(candidates, target, 0, prev);
-	}
+    /*
+     * http://gongxuns.blogspot.com/2012/12/leetcodecombination-sum.html
+     */
+    public ArrayList<ArrayList<Integer>> combinationSum1(int[] candidates,
+            int target) {
+        Arrays.sort(candidates);
+        ArrayList<ArrayList<Integer>> prev = new ArrayList<ArrayList<Integer>>();
+        prev.add(new ArrayList<Integer>());
+        
+        return combinationSum1(candidates, target, 0, prev);
+    }
 
-	public ArrayList<ArrayList<Integer>> combinationSum1(int[] candidates,
-			int target, int i, ArrayList<ArrayList<Integer>> prev) {
-		ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-		if (target == 0) {
-			for (ArrayList<Integer> temp : prev) {
-				ArrayList<Integer> temp1 = new ArrayList<Integer>(temp);
-				res.add(temp1);
-			}
-			return res;
-		}
-		for (int j = i; j < candidates.length; j++) {
-			if (candidates[j] > target)
-				break;
+    public ArrayList<ArrayList<Integer>> combinationSum1(int[] candidates,
+            int target, int i, ArrayList<ArrayList<Integer>> prev) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+        if (target == 0) {
+            for (ArrayList<Integer> temp : prev) {
+                ArrayList<Integer> temp1 = new ArrayList<Integer>(temp);
+                res.add(temp1);
+            }
+            return res;
+        }
+        for (int j = i; j < candidates.length; j++) {
+            if (candidates[j] > target)
+                break;
 
-			for (ArrayList<Integer> temp : prev)
-				temp.add(candidates[j]);
-			
-			ArrayList<ArrayList<Integer>> next = combinationSum1(candidates,
-					target - candidates[j], j, prev);
+            for (ArrayList<Integer> temp : prev)
+                temp.add(candidates[j]);
+            
+            ArrayList<ArrayList<Integer>> next = combinationSum1(candidates,
+                    target - candidates[j], j, prev);
 
-			if (next.size() > 0)
-				res.addAll(next);
-			for (ArrayList<Integer> temp : prev)
-				temp.remove(temp.size() - 1);
-		}
-		return res;
-	}
+            if (next.size() > 0)
+                res.addAll(next);
+            for (ArrayList<Integer> temp : prev)
+                temp.remove(temp.size() - 1);
+        }
+        return res;
+    }
 }

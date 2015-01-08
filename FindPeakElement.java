@@ -1,7 +1,7 @@
 package lc;
 
 public class FindPeakElement {
-	public int findPeakElement(int[] num) {
+    public int findPeakElement(int[] num) {
         int a = 0, b = num.length-1;
         while(a <= b) {
             int m = (a+b) >> 1;

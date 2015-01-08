@@ -60,15 +60,15 @@ public class PathSumII {
         if(root.left == null && root.right == null && root.val == sum) {
             res.add(new ArrayList<Integer>(list));
         } else {
-        	pathSum(root.left, sum-root.val, list, res);
-        	pathSum(root.right, sum-root.val, list, res);
+            pathSum(root.left, sum-root.val, list, res);
+            pathSum(root.right, sum-root.val, list, res);
         }
         list.remove(list.size()-1);
     }
-	
-	/*
-	 * doesn't pass large judge due to time limit
-	 */
+    
+    /*
+     * doesn't pass large judge due to time limit
+     */
     public ArrayList<ArrayList<Integer>> pathSum3(TreeNode root, int sum) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         if(root == null)

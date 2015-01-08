@@ -3,7 +3,7 @@ package lc;
 import java.util.Arrays;
 
 public class SearchForARange {
-	// my latest code as of sep/14
+    // my latest code as of sep/14
     public int[] searchRange(int[] A, int target) {
         int[] res = new int[2];
         if(A == null || A.length == 0) {
@@ -45,15 +45,15 @@ public class SearchForARange {
         return -1;
     }
 
-	public static void main(String[] args) {
-		SearchForARange instance = new SearchForARange();
-		int[] result = instance.searchRange(new int[]{0,0,0,0,1,2,3,3,4,5,6,6,7,8,8,8,9,9,10,10,11,11}, 0);
-		System.out.println(Arrays.toString(result));
-	}
+    public static void main(String[] args) {
+        SearchForARange instance = new SearchForARange();
+        int[] result = instance.searchRange(new int[]{0,0,0,0,1,2,3,3,4,5,6,6,7,8,8,8,9,9,10,10,11,11}, 0);
+        System.out.println(Arrays.toString(result));
+    }
 
-	/*
-	 * http://gongxuns.blogspot.com/2012/12/leetcode-search-for-range.html
-	 */
+    /*
+     * http://gongxuns.blogspot.com/2012/12/leetcode-search-for-range.html
+     */
     public int[] searchRange(int[] A, int target) {
         if(A==null || A.length==0)return null;
         int[] res = new int[2];
@@ -81,9 +81,9 @@ public class SearchForARange {
         return searchMaxLessThan(A,target,start,end);
     }
 
-	/*
-	 * my own implementation, a little complex
-	 */
+    /*
+     * my own implementation, a little complex
+     */
     public int[] searchRange1(int[] A, int target) {
         int[] result = new int[2];
         

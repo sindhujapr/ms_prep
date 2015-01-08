@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RestoreIPAddress {
-	public static void main(String[] args) {
-		RestoreIPAddress instance = new RestoreIPAddress();
-		ArrayList<String> addresses = instance.restoreIpAddresses1("");
-		System.out.print(addresses.size() + ":\t");
-		for (String address : addresses)
-			System.out.print(address + "\t");
-	}
-	
+    public static void main(String[] args) {
+        RestoreIPAddress instance = new RestoreIPAddress();
+        ArrayList<String> addresses = instance.restoreIpAddresses1("");
+        System.out.print(addresses.size() + ":\t");
+        for (String address : addresses)
+            System.out.print(address + "\t");
+    }
+    
     public ArrayList<String> restoreIpAddresses1(String s) {
-		StringBuilder sb = new StringBuilder();
-		ArrayList<String> result = new ArrayList<String>();
+        StringBuilder sb = new StringBuilder();
+        ArrayList<String> result = new ArrayList<String>();
         //keep the indices of the char in each part of the IP address
         List<Integer> indices = new ArrayList<Integer>();
         
@@ -30,7 +30,7 @@ public class RestoreIPAddress {
             }
             
             if(sb.length() > 0)
-            	sb.deleteCharAt(sb.length()-1);
+                sb.deleteCharAt(sb.length()-1);
             // re-implement validIPAddress for non-recursive algorithm
             if(index == s.length() && valid(sb))
                 result.add(sb.toString());
@@ -42,13 +42,13 @@ public class RestoreIPAddress {
             }
             
             if(indices.size() > 0)
-            	index = indices.remove(indices.size()-1) + 1;
+                index = indices.remove(indices.size()-1) + 1;
             else
-            	index = 0;
+                index = 0;
         } while(index < s.length() || sb.toString().length() > 0);
         
-		return result;
-	}
+        return result;
+    }
     
     private int count(String str, char ch) {
         int cnt = 0;
@@ -59,24 +59,24 @@ public class RestoreIPAddress {
     }
 
     public ArrayList<String> restoreIpAddresses(String s) {
-		ArrayList<String> res = new ArrayList<String>();
+        ArrayList<String> res = new ArrayList<String>();
 
-		// for large judge
+        // for large judge
         if(s.length() >= 4 && s.length() <= 12)
             restore(s, 0, new StringBuilder(), res);
         return res;
-	}
-	
-	private void restore(String s, int start, StringBuilder builder, ArrayList<String> res) {
-	    if(start == s.length()) {
-	        if(valid(builder))
-	            res.add(builder.substring(0, builder.length()-1));
-	        return;
-	    }
-	    
-	    for(int i = start+1; i <= s.length(); i++) {
-	        if(i-start > 1 && s.charAt(start) == '0')
-	            break;
+    }
+    
+    private void restore(String s, int start, StringBuilder builder, ArrayList<String> res) {
+        if(start == s.length()) {
+            if(valid(builder))
+                res.add(builder.substring(0, builder.length()-1));
+            return;
+        }
+        
+        for(int i = start+1; i <= s.length(); i++) {
+            if(i-start > 1 && s.charAt(start) == '0')
+                break;
             
             if(Integer.valueOf(s.substring(start, i)) > 255)
                 break;
@@ -84,13 +84,13 @@ public class RestoreIPAddress {
             builder.append(s.substring(start, i)).append('.');
             restore(s, i, builder, res);
             builder.delete(builder.length()-(i-start+1), builder.length());
-	    }
-	}
-	
-	private boolean valid(StringBuilder builder) {
-	    int cnt = 0;
-	    for(char ch : builder.toString().toCharArray())
-	    	cnt += ch == '.' ? 1 : 0;
-	    return cnt == 4;
-	}
+        }
+    }
+    
+    private boolean valid(StringBuilder builder) {
+        int cnt = 0;
+        for(char ch : builder.toString().toCharArray())
+            cnt += ch == '.' ? 1 : 0;
+        return cnt == 4;
+    }
 }

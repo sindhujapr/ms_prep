@@ -54,7 +54,7 @@ public class Candy {
     }
     
     public static void main(String[] args) {
-		System.out.println(new Candy().candy(new int[] {3, 2, 4, 5}));
-		System.out.println(new Candy().candy(new int[] {7, 6, 5, 1}));
-	}
+        System.out.println(new Candy().candy(new int[] {3, 2, 4, 5}));
+        System.out.println(new Candy().candy(new int[] {7, 6, 5, 1}));
+    }
 }

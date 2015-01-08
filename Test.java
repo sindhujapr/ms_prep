@@ -15,24 +15,24 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Test {
-	public void f() throws IOException {
+    public void f() throws IOException {
 
-	}
+    }
 
-	public static void main(String[] args) {
-		int[] array = {2, -1, -2, 1, 3, -2, 3, -3, 1, 2};
-		
-		int max = Integer.MIN_VALUE;
-		int sum = 0;
-		for (int i = 0; i < array.length; i++) {
-			sum += array[i];
-			if(sum < 0)
-				sum = 0;
-			
-			if(sum > max)
-				max = sum;
-		}
-		
-		System.out.println(max);
-	}
+    public static void main(String[] args) {
+        int[] array = {2, -1, -2, 1, 3, -2, 3, -3, 1, 2};
+        
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+            if(sum < 0)
+                sum = 0;
+            
+            if(sum > max)
+                max = sum;
+        }
+        
+        System.out.println(max);
+    }
 }

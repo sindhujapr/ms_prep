@@ -3,10 +3,10 @@ package lc2;
 import java.util.ArrayList;
 
 public class PascalTriangle {
-	/*
-	 * the rule is different from Pascal's Triangle II, which requires output <1, 3, 3, 1> for 3.
-	 * but for this problem, it requires output <1, 3, 3, 1> for 4.
-	 */
+    /*
+     * the rule is different from Pascal's Triangle II, which requires output <1, 3, 3, 1> for 3.
+     * but for this problem, it requires output <1, 3, 3, 1> for 4.
+     */
     public ArrayList<ArrayList<Integer>> generate(int numRows) {
         assert numRows >= 0;
         

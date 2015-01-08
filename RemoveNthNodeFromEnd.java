@@ -4,15 +4,15 @@ package lc;
  * http://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/
  */
 public class RemoveNthNodeFromEnd {
-	static class ListNode {
-		int val;
-		ListNode next;
+    static class ListNode {
+        int val;
+        ListNode next;
 
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-	}
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if(head == null)
@@ -22,7 +22,7 @@ public class RemoveNthNodeFromEnd {
         while(n-- > 0)
             node1 = node1.next;
         
-		// if we want to remove the first node
+        // if we want to remove the first node
         if(node1 == null)
             return head.next;
         
@@ -31,7 +31,7 @@ public class RemoveNthNodeFromEnd {
             node1 = node1.next;
         }
 
-		// here we're sure the node we'll remove is not the head
+        // here we're sure the node we'll remove is not the head
         node2.next = node2.next.next;
         return head;       
     }

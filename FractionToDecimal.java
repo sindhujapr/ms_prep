@@ -17,7 +17,7 @@ public class FractionToDecimal {
         if(numerator == 0)
             return "0";
 
-		// or we can remove the above two lines and add another condition "(numerator == 0) || " to below.
+        // or we can remove the above two lines and add another condition "(numerator == 0) || " to below.
         boolean sign = (numerator > 0 && denominator > 0) || (numerator < 0 && denominator < 0);
         long num = Math.abs((long)numerator);
         long den = Math.abs((long)denominator);

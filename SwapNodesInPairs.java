@@ -1,47 +1,47 @@
 package lc;
 
 public class SwapNodesInPairs {
-	private class ListNode {
-		int val;
-		ListNode next;
+    private class ListNode {
+        int val;
+        ListNode next;
 
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-	}
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
 
-	public ListNode init(int limit) {
-		ListNode head = null;
-		ListNode tail = null;
+    public ListNode init(int limit) {
+        ListNode head = null;
+        ListNode tail = null;
 
-		for (int i = 1; i <= limit; i++) {
-			ListNode node = new ListNode(i);
-			if (head == null) {
-				head = tail = node;
-				continue;
-			}
-			tail.next = node;
-			tail = node;
-		}
-		return head;
-	}
+        for (int i = 1; i <= limit; i++) {
+            ListNode node = new ListNode(i);
+            if (head == null) {
+                head = tail = node;
+                continue;
+            }
+            tail.next = node;
+            tail = node;
+        }
+        return head;
+    }
 
-	public void printList(ListNode head) {
-		while (head != null) {
-			System.out.print(head.val + "  ");
-			head = head.next;
-		}
-		System.out.println();
-	}
+    public void printList(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val + "  ");
+            head = head.next;
+        }
+        System.out.println();
+    }
 
-	public static void main(String[] args) {
-		SwapNodesInPairs instance = new SwapNodesInPairs();
-		ListNode head = instance.init(5);
-		instance.printList(head);
-		head = instance.swapPairs(head);
-		instance.printList(head);
-	}
+    public static void main(String[] args) {
+        SwapNodesInPairs instance = new SwapNodesInPairs();
+        ListNode head = instance.init(5);
+        instance.printList(head);
+        head = instance.swapPairs(head);
+        instance.printList(head);
+    }
 
     public ListNode swapPairs(ListNode head) {
         ListNode node = head;
@@ -69,7 +69,7 @@ public class SwapNodesInPairs {
         return head;
     }
 
-	// my latest as of sep/2014
+    // my latest as of sep/2014
     public ListNode swapPairs(ListNode head) {
         ListNode newHead = null, newTail = null;
         if(head == null || head.next == null)

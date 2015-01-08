@@ -7,14 +7,14 @@ import java.util.ArrayList;
  * http://www.geeksforgeeks.org/merge-k-sorted-arrays/
  */
 public class MergeKSortedLists {
-	// divide and conquer
+    // divide and conquer
     public ListNode mergeKLists(List<ListNode> lists) {
         return merge(lists, 0, lists.size()-1);
     }
     
     private ListNode merge(List<ListNode> lists, int start, int end) {
-		if(start > end)
-			return null;
+        if(start > end)
+            return null;
 
         if(start == end)
             return lists.get(start);
@@ -51,7 +51,7 @@ public class MergeKSortedLists {
         return head;
     }
 
-	// as of sep/2014, this doesn't pass large judge
+    // as of sep/2014, this doesn't pass large judge
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
         ListNode head = null, tail = null;
         while(true) {

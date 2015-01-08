@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class NQueen {
-	public static void main(String[] args) {
-		ArrayList<String[]> result = new NQueen().solveNQueens(2);
-		System.out.println(result.size());
-		for(String[] strs : result) {
-			for(String str : strs)
-				System.out.println(str);
-			System.out.println("======================");
-		}
-	}
+    public static void main(String[] args) {
+        ArrayList<String[]> result = new NQueen().solveNQueens(2);
+        System.out.println(result.size());
+        for(String[] strs : result) {
+            for(String str : strs)
+                System.out.println(str);
+            System.out.println("======================");
+        }
+    }
 
     public ArrayList<String[]> solveNQueens(int n) {
         List<String[]> result = new ArrayList<String[]>();

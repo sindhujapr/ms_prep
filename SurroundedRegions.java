@@ -37,12 +37,12 @@ public class SurroundedRegions {
         while(stack.size() > 0) {
             int pos = stack.remove(stack.size()-1);
             int row = pos / n, col = pos % n;
-    		/*
-    		 * here we use condition board[x][y] != 'O'. if the element is 'X', we
-    		 * cannot move forward because it's not a surrounded element. if the
-    		 * element is 'D', we also cannot move forward because it has been
-    		 * visited (and thus marked), otherwise there would be stack overflow.
-    		 */
+            /*
+             * here we use condition board[x][y] != 'O'. if the element is 'X', we
+             * cannot move forward because it's not a surrounded element. if the
+             * element is 'D', we also cannot move forward because it has been
+             * visited (and thus marked), otherwise there would be stack overflow.
+             */
             if(row < 0 || row >= m || col < 0 || col >= n || board[row][col] != 'O')
                 continue;
             

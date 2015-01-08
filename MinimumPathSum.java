@@ -1,8 +1,8 @@
 public class MinimumPathSum {
-	/*
-	 * We shouldn't use matrix[m+1][n+1] and set the border element as Integer.MAX_VALUE, since
-	 * there will be overflow if we add it with whatever positive integer in the grid.
-	 */
+    /*
+     * We shouldn't use matrix[m+1][n+1] and set the border element as Integer.MAX_VALUE, since
+     * there will be overflow if we add it with whatever positive integer in the grid.
+     */
     public int minPathSum(int[][] grid) {
         if(grid == null || grid.length == 0)
             return 0;

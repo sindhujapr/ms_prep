@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PalindromePartitioning {
-	public static void main(String[] args) {
-		ArrayList<ArrayList<String>> result = new PalindromePartitioning().partition("ab");
-		for(ArrayList<String> one : result)
-			System.out.println(one);
-	}
-	
+    public static void main(String[] args) {
+        ArrayList<ArrayList<String>> result = new PalindromePartitioning().partition("ab");
+        for(ArrayList<String> one : result)
+            System.out.println(one);
+    }
+    
     public ArrayList<ArrayList<String>> partition(String s) {
         ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
         ArrayList<String> one = new ArrayList<String>();
@@ -32,8 +32,8 @@ public class PalindromePartitioning {
                 result.add(new ArrayList<String>(one));
             
             if(indices.size() > 0) {
-            	index = indices.remove(indices.size()-1) + 1;
-            	len -= one.remove(one.size()-1).length();
+                index = indices.remove(indices.size()-1) + 1;
+                len -= one.remove(one.size()-1).length();
             }
         } while(index <= s.length() || one.size() > 0);
         
@@ -61,9 +61,9 @@ public class PalindromePartitioning {
         }
     }
     
-	/*
-	 * One improvement is to caculate an ispalin[][] array in advance to save redundant work
-	 */
+    /*
+     * One improvement is to caculate an ispalin[][] array in advance to save redundant work
+     */
     private boolean isPalin(String s, int start, int end) {
         while(start <= end)
             if(s.charAt(start++) != s.charAt(end--))

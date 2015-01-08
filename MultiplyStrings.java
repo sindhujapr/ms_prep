@@ -1,13 +1,13 @@
 package lc;
 
 public class MultiplyStrings {
-	public static void main(String[] args) {
-		MultiplyStrings instance = new MultiplyStrings();
-		System.out.println(instance.multiply("98", "9"));
-		System.out.println(123*456);
-	}
+    public static void main(String[] args) {
+        MultiplyStrings instance = new MultiplyStrings();
+        System.out.println(instance.multiply("98", "9"));
+        System.out.println(123*456);
+    }
 
-	// my latest code
+    // my latest code
     public String multiply(String num1, String num2) {
         assert num1 != null && num2 != null;
         
@@ -17,7 +17,7 @@ public class MultiplyStrings {
             int sum = carrier;
             for(int i = 0; i <= bit; i++) {
                 int b1 = m-i-1, b2 = n-(bit-i)-1;
-				// must have!!!
+                // must have!!!
                 if(b1 < 0 || b2 < 0)
                     continue;
                     
@@ -36,10 +36,10 @@ public class MultiplyStrings {
         return res.length() == 0 ? "0" : res.toString();
     }
 
-	/*
-	 * Adapted from:
-	 * http://gongxuns.blogspot.com/2013/01/leetcode-multiply-strings.html
-	 */
+    /*
+     * Adapted from:
+     * http://gongxuns.blogspot.com/2013/01/leetcode-multiply-strings.html
+     */
     public String multiply1(String num1, String num2) {
         // IMPORTANT: Please reset any member data you declared, as
         // the same Solution instance will be reused for each test case.

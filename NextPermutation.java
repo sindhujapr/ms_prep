@@ -3,12 +3,12 @@ package lc;
 import java.util.Arrays;
 
 public class NextPermutation {
-	public static void main(String[] args) {
-		int[] array = { 1, 2, 3, 6, 5, 1};
-		NextPermutation instance = new NextPermutation();
-		instance.nextPermutation(array);
-		System.out.println(Arrays.toString(array));
-	}
+    public static void main(String[] args) {
+        int[] array = { 1, 2, 3, 6, 5, 1};
+        NextPermutation instance = new NextPermutation();
+        instance.nextPermutation(array);
+        System.out.println(Arrays.toString(array));
+    }
 
     public void nextPermutation(int[] num) {
         int pos = num.length-1;
@@ -39,38 +39,38 @@ public class NextPermutation {
         qsort(num, j+1, end);
     }
     
-	public void nextPermutation1(int[] num) {
-		if (num == null || num.length == 0 || num.length == 1)
-			return;
+    public void nextPermutation1(int[] num) {
+        if (num == null || num.length == 0 || num.length == 1)
+            return;
 
-		int i = num.length - 1;
-		int j = num.length - 2;
-		for (; j >= 0; j--) {
-			boolean flag = false;
-			for (i = num.length-1; i > j; i--) {
-				if (num[i] > num[j]) {
-					swap(num, i, j);
-					flag = true;
-					break;
-				}
-			}
-			if (flag)
-				break;
-		}
+        int i = num.length - 1;
+        int j = num.length - 2;
+        for (; j >= 0; j--) {
+            boolean flag = false;
+            for (i = num.length-1; i > j; i--) {
+                if (num[i] > num[j]) {
+                    swap(num, i, j);
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag)
+                break;
+        }
 
-		for (int k = j + 1; k < (num.length + j + 1) >>> 1; k++) {
-			int m = (num.length + j - k);
-			swap(num, m, k);
-		}
-		return;
+        for (int k = j + 1; k < (num.length + j + 1) >>> 1; k++) {
+            int m = (num.length + j - k);
+            swap(num, m, k);
+        }
+        return;
 
-	}
+    }
 
-	public void swap(int[] num, int i, int j) {
-		if(i == j)
-			return;
-		num[i] ^= num[j];
-		num[j] ^= num[i];
-		num[i] ^= num[j];
-	}
+    public void swap(int[] num, int i, int j) {
+        if(i == j)
+            return;
+        num[i] ^= num[j];
+        num[j] ^= num[i];
+        num[i] ^= num[j];
+    }
 }

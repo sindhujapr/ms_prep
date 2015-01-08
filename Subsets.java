@@ -34,7 +34,7 @@ public class Subsets {
         }   
     }
 
-	/*
+    /*
      * As a new approach, we can use bit operation:
      * If there are n numbers, we map each to one bit.
      * The initial value is 0, indicating empty set.
@@ -57,7 +57,7 @@ public class Subsets {
                 copy.add(S[i]);
                 res.add(copy);
             }
-			// we don't need to create another list and add the current element!!
+            // we don't need to create another list and add the current element!!
         }
         
         return res;

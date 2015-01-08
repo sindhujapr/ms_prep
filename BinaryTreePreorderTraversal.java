@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTreePreorderTraversal {
-	/*
-	 * iterative solution. Different from in-order traversal, we don't need the map or set
-	 * to include the nodes that we have accessed and thus we can keep their values directly
-	 * for next access.
-	 */
+    /*
+     * iterative solution. Different from in-order traversal, we don't need the map or set
+     * to include the nodes that we have accessed and thus we can keep their values directly
+     * for next access.
+     */
     public ArrayList<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<Integer>();
         if(root == null)

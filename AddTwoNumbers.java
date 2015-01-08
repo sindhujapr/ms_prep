@@ -1,23 +1,23 @@
 package lc;
 
 public class AddTwoNumbers {
-	public static void main(String[] args) {
-		AddTwoNumbers instance = new AddTwoNumbers();
-		ListNode result = instance.addTwoNumbers(new ListNode(5), new ListNode(5));
-		instance.printList(result);
-	}
-	
-	public void printList(ListNode head) {
-		while(head != null) {
-			System.out.print(head.val + "->");
-			head = head.next;
-		}
-	}
-	
-	/*
-	 * see better implementation here:
-	 * http://gongxuns.blogspot.com/2012/12/leetcodeadd-two-numbers.html
-	 */
+    public static void main(String[] args) {
+        AddTwoNumbers instance = new AddTwoNumbers();
+        ListNode result = instance.addTwoNumbers(new ListNode(5), new ListNode(5));
+        instance.printList(result);
+    }
+    
+    public void printList(ListNode head) {
+        while(head != null) {
+            System.out.print(head.val + "->");
+            head = head.next;
+        }
+    }
+    
+    /*
+     * see better implementation here:
+     * http://gongxuns.blogspot.com/2012/12/leetcodeadd-two-numbers.html
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null;
         ListNode tail = null;

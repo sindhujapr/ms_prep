@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class FourSum {
-	// my latest code based on three sum.
+    // my latest code based on three sum.
     public List<List<Integer>> fourSum(int[] num, int target) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if(num == null || num.length < 4)
@@ -46,7 +46,7 @@ public class FourSum {
                         while(k < l && num[l] == num[l+1])
                             l--;
                     } else if(sum < target) {
-						// don't care whether we will have the same element next time since this is not result.
+                        // don't care whether we will have the same element next time since this is not result.
                         k++;
                     } else {
                         l--;
@@ -58,18 +58,18 @@ public class FourSum {
         return res;
     }
 
-	public static void main(String[] args) {
-		int[] num = { 0, 0, 0, 0 };
-		ArrayList<ArrayList<Integer>> result = new FourSum().fourSum(num, 0);
-		System.out.println("result:");
-		for (ArrayList<Integer> list : result)
-			System.out.println(list);
-	}
+    public static void main(String[] args) {
+        int[] num = { 0, 0, 0, 0 };
+        ArrayList<ArrayList<Integer>> result = new FourSum().fourSum(num, 0);
+        System.out.println("result:");
+        for (ArrayList<Integer> list : result)
+            System.out.println(list);
+    }
 
-	/*
-	 * this is my implementation but it doesn't pass test case {0, 0, 0, 0 } and 2.
-	 * not sure why because it passes with my local environment.
-	 */
+    /*
+     * this is my implementation but it doesn't pass test case {0, 0, 0, 0 } and 2.
+     * not sure why because it passes with my local environment.
+     */
     public ArrayList<ArrayList<Integer>> fourSum3(int[] num, int target) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
         if(num == null || num.length < 4)
@@ -126,95 +126,95 @@ public class FourSum {
         return res;
     }
     
-	public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
-		Arrays.sort(num);
-		Set<ArrayList<Integer>> hSet = new HashSet<ArrayList<Integer>>();
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
+        Arrays.sort(num);
+        Set<ArrayList<Integer>> hSet = new HashSet<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
-		for (int i = 0; i < num.length; i++) {
-			for (int j = i + 1; j < num.length; j++) {
-				for (int k = j + 1, l = num.length - 1; k < l;) {
-					int sum = num[i] + num[j] + num[k] + num[l];
-					if (sum > target) {
-						l--;
-					} else if (sum < target) {
-						k++;
-					} else if (sum == target) {
-						ArrayList<Integer> found = new ArrayList<Integer>();
-						found.add(num[i]);
-						found.add(num[j]);
-						found.add(num[k]);
-						found.add(num[l]);
-						if (!hSet.contains(found)) {
-							hSet.add(found);
-							result.add(found);
-						}
+        for (int i = 0; i < num.length; i++) {
+            for (int j = i + 1; j < num.length; j++) {
+                for (int k = j + 1, l = num.length - 1; k < l;) {
+                    int sum = num[i] + num[j] + num[k] + num[l];
+                    if (sum > target) {
+                        l--;
+                    } else if (sum < target) {
+                        k++;
+                    } else if (sum == target) {
+                        ArrayList<Integer> found = new ArrayList<Integer>();
+                        found.add(num[i]);
+                        found.add(num[j]);
+                        found.add(num[k]);
+                        found.add(num[l]);
+                        if (!hSet.contains(found)) {
+                            hSet.add(found);
+                            result.add(found);
+                        }
 
-						k++;
-						l--;
-					}
-				}
-			}
-		}
-		return result;
-	}
+                        k++;
+                        l--;
+                    }
+                }
+            }
+        }
+        return result;
+    }
 
-	/*
-	 * doesn't pass judge large
-	 */
-	public ArrayList<ArrayList<Integer>> fourSum1(int[] num, int target) {
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		if (num.length < 4)
-			return result;
+    /*
+     * doesn't pass judge large
+     */
+    public ArrayList<ArrayList<Integer>> fourSum1(int[] num, int target) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (num.length < 4)
+            return result;
 
-		Arrays.sort(num);
-		for (int i = 0; i < num.length - 3;) {
-			for (int j = i + 1; j < num.length - 2;) {
-				int low = j + 1;
-				int high = num.length - 1;
+        Arrays.sort(num);
+        for (int i = 0; i < num.length - 3;) {
+            for (int j = i + 1; j < num.length - 2;) {
+                int low = j + 1;
+                int high = num.length - 1;
 
-				while (low < high) {
-					int low_bak = low;
-					int high_bak = high;
+                while (low < high) {
+                    int low_bak = low;
+                    int high_bak = high;
 
-					int sum = num[i] + num[j] + num[low] + num[high];
-					if (sum == target) {
-						ArrayList<Integer> one = new ArrayList<Integer>();
-						one.add(num[i]);
-						one.add(num[j]);
-						one.add(num[low]);
-						one.add(num[high]);
-						result.add(one);
+                    int sum = num[i] + num[j] + num[low] + num[high];
+                    if (sum == target) {
+                        ArrayList<Integer> one = new ArrayList<Integer>();
+                        one.add(num[i]);
+                        one.add(num[j]);
+                        one.add(num[low]);
+                        one.add(num[high]);
+                        result.add(one);
 
-						low++;
-						high--;
-					} else if (sum < target) {
-						low++;
-					} else {
-						high--;
-					}
+                        low++;
+                        high--;
+                    } else if (sum < target) {
+                        low++;
+                    } else {
+                        high--;
+                    }
 
-					/*
-					 * remove possible duplicate
-					 */
-					while (low > low_bak && num[low] == num[low - 1]
-							&& low < high)
-						low++;
-					while (high < high_bak && num[high] == num[high + 1]
-							&& low < high)
-						high--;
-				}
+                    /*
+                     * remove possible duplicate
+                     */
+                    while (low > low_bak && num[low] == num[low - 1]
+                            && low < high)
+                        low++;
+                    while (high < high_bak && num[high] == num[high + 1]
+                            && low < high)
+                        high--;
+                }
 
-				j++;
-				while (j < num.length - 2 && num[j] == num[j - 1])
-					j++;
-			}
+                j++;
+                while (j < num.length - 2 && num[j] == num[j - 1])
+                    j++;
+            }
 
-			i++;
-			while (i < num.length - 3 && num[i] == num[i - 1])
-				i++;
-		}
+            i++;
+            while (i < num.length - 3 && num[i] == num[i - 1])
+                i++;
+        }
 
-		return result;
-	}
+        return result;
+    }
 }

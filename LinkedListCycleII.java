@@ -1,11 +1,11 @@
 package lc;
 
 public class LinkedListCycleII {
-	/*
-	 * idea here:
-	 * http://www.cnblogs.com/TenosDoIt/p/3416702.html
-	 * http://umairsaeed.com/2011/06/23/finding-the-start-of-a-loop-in-a-circular-linked-list/
-	 */
+    /*
+     * idea here:
+     * http://www.cnblogs.com/TenosDoIt/p/3416702.html
+     * http://umairsaeed.com/2011/06/23/finding-the-start-of-a-loop-in-a-circular-linked-list/
+     */
     public ListNode detectCycle(ListNode head) {
         if(head == null)
             return null;
@@ -32,8 +32,8 @@ public class LinkedListCycleII {
         }
         return slow;
     }
-	
-	// idea from http://blog.csdn.net/whuwangyi/article/details/14103993
+    
+    // idea from http://blog.csdn.net/whuwangyi/article/details/14103993
     public ListNode detectCycle2(ListNode head) {
         if(head == null)
             return null;

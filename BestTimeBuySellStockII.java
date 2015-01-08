@@ -1,7 +1,7 @@
 package lc2;
 
 public class BestTimeBuySellStockII {
-	// my latest code
+    // my latest code
     public int maxProfit1(int[] prices) {
         if(prices == null || prices.length < 2)
             return 0;

@@ -1,11 +1,11 @@
 package lc;
 
 public class AddBinary {
-	public static void main(String[] args) {
-		AddBinary instance = new AddBinary();
-		System.out.println(instance.addBinary("0", "1"));
-	}
-	
+    public static void main(String[] args) {
+        AddBinary instance = new AddBinary();
+        System.out.println(instance.addBinary("0", "1"));
+    }
+    
     public String addBinary(String a, String b) {
         StringBuilder builder = new StringBuilder();
         int carrier = 0;

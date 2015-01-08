@@ -1,7 +1,7 @@
 package lc;
 
 public class PartitionList {
-	// my latest code
+    // my latest code
     public ListNode partition(ListNode head, int x) {
         ListNode node = head;
         ListNode big_head = null, big_tail = null;

@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Set;
 
 class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode(int val) { this.val = val; }
-	public String toString() { return Integer.toString(val); }
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int val) { this.val = val; }
+    public String toString() { return Integer.toString(val); }
 }
 
 public class BinaryTreeInorderTraversal {

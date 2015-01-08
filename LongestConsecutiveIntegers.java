@@ -6,12 +6,12 @@ import java.util.Map;
 import java.util.Set;
 
 public class LongestConsecutiveIntegers {
-	public static void main(String[] args) {
-		int[] num = { 1,2, 5, 4, 3};
-		int max = new LongestConsecutiveIntegers().longestConsecutive(num);
-		System.out.println(max);
-	}
-	
+    public static void main(String[] args) {
+        int[] num = { 1,2, 5, 4, 3};
+        int max = new LongestConsecutiveIntegers().longestConsecutive(num);
+        System.out.println(max);
+    }
+    
     static class Pair{
         int start, end;
         public Pair(int start, int end) {

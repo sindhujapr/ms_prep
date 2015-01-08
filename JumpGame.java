@@ -1,7 +1,7 @@
 package lc;
 
 public class JumpGame {
-	// efficient regarding space complexity
+    // efficient regarding space complexity
     public boolean canJump(int[] A) {
         assert A != null && A.length >= 1;
 

@@ -3,11 +3,11 @@ package lc;
 import java.util.Arrays;
 
 public class ThreeSumClosest {
-	public static void main(String[] args) {
-		int[] num = {0, 1, 2};
-		System.out.println(new ThreeSumClosest().threeSumClosest(num, 1));
-	}
-	
+    public static void main(String[] args) {
+        int[] num = {0, 1, 2};
+        System.out.println(new ThreeSumClosest().threeSumClosest(num, 1));
+    }
+    
     public int threeSumClosest(int[] num, int target) {
         int gap = Integer.MAX_VALUE;
         int ret = 0;
@@ -26,12 +26,12 @@ public class ThreeSumClosest {
                 else if(sum-target >0)
                     high--;
                 else
-                	return sum;
+                    return sum;
 
                 int diff = Math.abs(sum-target);
                 if(diff < gap) {
-                	gap = diff;
-                	ret = sum;
+                    gap = diff;
+                    ret = sum;
                 }
             }
         }

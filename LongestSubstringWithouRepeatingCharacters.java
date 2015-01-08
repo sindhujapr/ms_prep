@@ -1,11 +1,11 @@
 package lc;
 
 public class LongestSubstringWithouRepeatingCharacters {
-	public static void main(String[] args) {
-		System.out.println(new LongestSubstringWithouRepeatingCharacters().lengthOfLongestSubstring("abcabcbb"));
-	}
+    public static void main(String[] args) {
+        System.out.println(new LongestSubstringWithouRepeatingCharacters().lengthOfLongestSubstring("abcabcbb"));
+    }
 
-	// my latest code
+    // my latest code
     public int lengthOfLongestSubstring(String s) {
         int max = 0;
         

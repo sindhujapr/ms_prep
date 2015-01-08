@@ -3,9 +3,9 @@ package lc;
 import java.util.Set;
 
 public class WordBreak {
-	/*
-	 * http://gongxuns.blogspot.com/2013/10/word-break.html
-	 */
+    /*
+     * http://gongxuns.blogspot.com/2013/10/word-break.html
+     */
     public boolean wordBreak(String s, Set<String> dict) {
         assert s != null;
             

@@ -5,17 +5,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SymmetricTree {
-	public static void main(String[] args) {
-		char[] chs = "my name is simon".toCharArray();
-		int index = 0;
-		while(true) {
-			char ch = chs[chs.length-1];
-			for(int i = chs.length-1; i >= 0 && chs[i] != ' '; i--)
-				chs[i] = chs[i-1];
-			chs[index] = ch;
-			
-		}
-	}
+    public static void main(String[] args) {
+        char[] chs = "my name is simon".toCharArray();
+        int index = 0;
+        while(true) {
+            char ch = chs[chs.length-1];
+            for(int i = chs.length-1; i >= 0 && chs[i] != ' '; i--)
+                chs[i] = chs[i-1];
+            chs[index] = ch;
+            
+        }
+    }
     public boolean isSymmetric3(TreeNode root) {
         if(root == null)
             return true;
@@ -49,9 +49,9 @@ public class SymmetricTree {
         return true;
     }
     
-	/*
-	 * http://gongxuns.blogspot.com/2012/12/leetcodesymmetric-tree.html
-	 */
+    /*
+     * http://gongxuns.blogspot.com/2012/12/leetcodesymmetric-tree.html
+     */
     public boolean isSymmetric(TreeNode root) {
         if(root == null)
             return true;
@@ -95,7 +95,7 @@ public class SymmetricTree {
         else if((left == null && right != null) || (left != null && right == null))
             return false;
         else
-        	return left.val == right.val && symmetric(left.left, right.right) &&
+            return left.val == right.val && symmetric(left.left, right.right) &&
                 symmetric(left.right, right.left);
     }
 }

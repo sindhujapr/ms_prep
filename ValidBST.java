@@ -14,6 +14,6 @@ public class ValidBST {
             return false;
         
         return valid(node.left, min, node.val) &&
-        		valid(node.right, node.val, max);
+                valid(node.right, node.val, max);
     }
 }

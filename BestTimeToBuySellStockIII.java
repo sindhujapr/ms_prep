@@ -4,10 +4,10 @@ package lc2;
  * http://blog.unieagle.net/2012/12/05/leetcode%E9%A2%98%E7%9B%AE%EF%BC%9Abest-time-to-buy-and-sell-stock-iii%EF%BC%8C%E4%B8%80%E7%BB%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/
  */
 public class BestTimeToBuySellStockIII {
-	/*
-	 * find a split point such that the sum of two profits can be maximum. this
-	 * is similar to palindrome partition II.
-	 */
+    /*
+     * find a split point such that the sum of two profits can be maximum. this
+     * is similar to palindrome partition II.
+     */
     public int maxProfit(int[] prices) {
         if(prices == null || prices.length < 2)
             return 0;
@@ -35,7 +35,7 @@ public class BestTimeToBuySellStockIII {
         return maxSum;
     }
 
-	// easier to understand
+    // easier to understand
     public int maxProfit(int[] prices) {
         if(prices == null || prices.length < 2)
             return 0;

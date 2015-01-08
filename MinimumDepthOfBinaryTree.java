@@ -4,44 +4,44 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MinimumDepthOfBinaryTree {
-	public int minDepth(TreeNode root) {
-		if (root == null)
-			return 0;
+    public int minDepth(TreeNode root) {
+        if (root == null)
+            return 0;
 
-		return minDepth(root, 0);
-	}
+        return minDepth(root, 0);
+    }
 
-	private int minDepth(TreeNode node, int depth) {
-		if (node == null)
-			return Integer.MAX_VALUE;
+    private int minDepth(TreeNode node, int depth) {
+        if (node == null)
+            return Integer.MAX_VALUE;
 
-		depth++;
+        depth++;
 
-		/*
-		 * this is leaf node. for non-leaf node, we should return the depth of
-		 * the the non-null child, either left or right.
-		 */
-		if (node.left == null && node.right == null)
-			return depth;
+        /*
+         * this is leaf node. for non-leaf node, we should return the depth of
+         * the the non-null child, either left or right.
+         */
+        if (node.left == null && node.right == null)
+            return depth;
 
-		return Math.min(minDepth(node.left, depth), minDepth(node.right, depth));
-	}
+        return Math.min(minDepth(node.left, depth), minDepth(node.right, depth));
+    }
 
-	public int minDepth2(TreeNode root) {
-		if (root == null)
-			return 0;
-		if (root.left == null && root.right == null)
-			return 1;
-		else {
-			int leftDepth = root.left != null ? minDepth(root.left) : Integer.MAX_VALUE;
-			int rightDepth = root.right != null ? minDepth(root.right) : Integer.MAX_VALUE;
-			return Math.min(leftDepth, rightDepth) + 1;
-		}
-	}
+    public int minDepth2(TreeNode root) {
+        if (root == null)
+            return 0;
+        if (root.left == null && root.right == null)
+            return 1;
+        else {
+            int leftDepth = root.left != null ? minDepth(root.left) : Integer.MAX_VALUE;
+            int rightDepth = root.right != null ? minDepth(root.right) : Integer.MAX_VALUE;
+            return Math.min(leftDepth, rightDepth) + 1;
+        }
+    }
 
-	/*
-	 * non-recursion
-	 */
+    /*
+     * non-recursion
+     */
     public int minDepth3(TreeNode root) {
         if(root == null)
             return 0;
@@ -68,11 +68,11 @@ public class MinimumDepthOfBinaryTree {
     }
     
     public static void main(String[] args) {
-		TreeNode root = new TreeNode(1);
-		root.left = new TreeNode(2);
-		root.right = new TreeNode(3);
-		root.left.left = new TreeNode(4);
-		root.left.right = new TreeNode(5);
-		System.out.println(new MinimumDepthOfBinaryTree().minDepth3(root));
-	}
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        System.out.println(new MinimumDepthOfBinaryTree().minDepth3(root));
+    }
 }

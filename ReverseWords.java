@@ -25,7 +25,7 @@ public class ReverseWords {
         return builder.toString();
     }
 
-	// as of 10/29/2014, this doesn't pass large judge
+    // as of 10/29/2014, this doesn't pass large judge
     public String reverseWords(String s) {
         if(s == null || s.length() == 0)
             return s;
@@ -50,7 +50,7 @@ public class ReverseWords {
             builder.insert(start, ' ');
             while(i >= 0 && s.charAt(i) == ' ')
                 i--;
-			//must! move to the next insert position
+            //must! move to the next insert position
             start++;
         }
         

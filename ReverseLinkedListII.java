@@ -11,23 +11,23 @@ class ListNode {
  }
 
 public class ReverseLinkedListII {
-	public static void main(String[] args) {
-		ListNode head = new ListNode(1);
-		ListNode node = head;
-		for(int i = 2; i < 4; i++) {
-			node.next = new ListNode(i);
-			node = node.next;
-		}
-		
-		ReverseLinkedListII instance = new ReverseLinkedListII();
-		ListNode newHead = instance.reverseBetween(head, 2, 3);
-		node = newHead;
-		while(node != null) {
-			System.out.println(node.val);
-			node = node.next;
-		}
-	}
-	
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode node = head;
+        for(int i = 2; i < 4; i++) {
+            node.next = new ListNode(i);
+            node = node.next;
+        }
+        
+        ReverseLinkedListII instance = new ReverseLinkedListII();
+        ListNode newHead = instance.reverseBetween(head, 2, 3);
+        node = newHead;
+        while(node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+    }
+    
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if(head == null || m == n)
             return head;

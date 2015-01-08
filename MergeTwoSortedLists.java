@@ -1,20 +1,20 @@
 package lc;
 
 public class MergeTwoSortedLists {
-	public static void main(String[] args) {
-		MergeTwoSortedLists instance = new MergeTwoSortedLists();
-		ListNode node1 = new ListNode(2);
-		ListNode node2 = new ListNode(1);
-		ListNode head = instance.mergeTwoLists(node1, node2);
-		instance.printList(head);
-	}
-	
-	public void printList(ListNode head) {
-		while(head != null) {
-			System.out.print(head.val + "\t");
-			head = head.next;
-		}
-	}
+    public static void main(String[] args) {
+        MergeTwoSortedLists instance = new MergeTwoSortedLists();
+        ListNode node1 = new ListNode(2);
+        ListNode node2 = new ListNode(1);
+        ListNode head = instance.mergeTwoLists(node1, node2);
+        instance.printList(head);
+    }
+    
+    public void printList(ListNode head) {
+        while(head != null) {
+            System.out.print(head.val + "\t");
+            head = head.next;
+        }
+    }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;

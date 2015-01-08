@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PermutationSequence {
-	public static void main(String[] args) {
-		System.out.println(new PermutationSequence().getPermutation(4, 3));
-	}
-	
+    public static void main(String[] args) {
+        System.out.println(new PermutationSequence().getPermutation(4, 3));
+    }
+    
     public String getPermutation(int n, int k) {
-    	assert k > 0 && k <= f(n);
+        assert k > 0 && k <= f(n);
  
         k--;
         List<Character> list = new ArrayList<Character>();

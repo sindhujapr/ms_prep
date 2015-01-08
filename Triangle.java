@@ -28,36 +28,36 @@ public class Triangle {
         return min;
     }
 
-	public ArrayList<ArrayList<Integer>> init() {
-		ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
+    public ArrayList<ArrayList<Integer>> init() {
+        ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
 
-		ArrayList<Integer> l1 = new ArrayList<Integer>();
-		l1.add(1);
-		list.add(l1);
+        ArrayList<Integer> l1 = new ArrayList<Integer>();
+        l1.add(1);
+        list.add(l1);
 
-		ArrayList<Integer> l2 = new ArrayList<Integer>();
-		l2.add(-5);
-		l2.add(-2);
-		list.add(l2);
+        ArrayList<Integer> l2 = new ArrayList<Integer>();
+        l2.add(-5);
+        l2.add(-2);
+        list.add(l2);
 
-		ArrayList<Integer> l3 = new ArrayList<Integer>();
-		l3.add(3);
-		l3.add(6);
-		l3.add(1);
-		list.add(l3);
+        ArrayList<Integer> l3 = new ArrayList<Integer>();
+        l3.add(3);
+        l3.add(6);
+        l3.add(1);
+        list.add(l3);
 
-		ArrayList<Integer> l4 = new ArrayList<Integer>();
-		l4.add(-1);
-		l4.add(2);
-		l4.add(4);
-		l4.add(-3);
-		list.add(l4);
+        ArrayList<Integer> l4 = new ArrayList<Integer>();
+        l4.add(-1);
+        l4.add(2);
+        l4.add(4);
+        l4.add(-3);
+        list.add(l4);
 
-		return list;
-	}
+        return list;
+    }
 
-	public static void main(String[] args) {
-		Triangle instance = new Triangle();
-		System.out.println(instance.minimumTotal(instance.init()));
-	}
+    public static void main(String[] args) {
+        Triangle instance = new Triangle();
+        System.out.println(instance.minimumTotal(instance.init()));
+    }
 }

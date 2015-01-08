@@ -1,45 +1,45 @@
 package lc;
 
 public class ReverseNodesInKGroup {
-	public ListNode reverseKGroup(ListNode head, int k) {
-		ListNode node = head;
-		ListNode tail = null;
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode node = head;
+        ListNode tail = null;
 
-		while (node != null) {
-			ListNode newHead = node;
-			ListNode newTail = node;
+        while (node != null) {
+            ListNode newHead = node;
+            ListNode newTail = node;
 
-			int n = k;
-			while (node != null && n > 0) {
-				n--;
-				node = node.next;
-			}
+            int n = k;
+            while (node != null && n > 0) {
+                n--;
+                node = node.next;
+            }
 
-			if (n > 0)
-				break;
+            if (n > 0)
+                break;
 
-			// [currentHead, nextSection)
-			ListNode toBeAdded = newHead.next;
-			while (toBeAdded != node) {
-				ListNode next = toBeAdded.next;
-				toBeAdded.next = newHead;
-				newHead = toBeAdded;
-				toBeAdded = next;
-			}
+            // [currentHead, nextSection)
+            ListNode toBeAdded = newHead.next;
+            while (toBeAdded != node) {
+                ListNode next = toBeAdded.next;
+                toBeAdded.next = newHead;
+                newHead = toBeAdded;
+                toBeAdded = next;
+            }
 
-			if (tail == null) {
-				head = newHead;
-			} else {
-				tail.next = newHead;
-			}
-			tail = newTail;
-			newTail.next = node;
-		}
+            if (tail == null) {
+                head = newHead;
+            } else {
+                tail.next = newHead;
+            }
+            tail = newTail;
+            newTail.next = node;
+        }
 
-		return head;
-	}
-	
-	// my latest implementation
+        return head;
+    }
+    
+    // my latest implementation
     public ListNode reverseKGroup2(ListNode head, int k) {
         ListNode newHead = null, newTail = null;
         while(true) {

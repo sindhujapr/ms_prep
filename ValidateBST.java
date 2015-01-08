@@ -2,10 +2,10 @@ package lc;
 
 public class ValidateBST {
     public boolean isValidBST(TreeNode root) {
-		/*
-		 * if we don't use long, a tree with single node Integer.MAX_VALUE will be
-		 * considered invalid
-		 */
+        /*
+         * if we don't use long, a tree with single node Integer.MAX_VALUE will be
+         * considered invalid
+         */
         return valid(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     

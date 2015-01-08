@@ -3,11 +3,11 @@ package lc;
 import java.util.ArrayList;
 
 public class LetterCombinationsOfPhoneNumber {
-	public static void main(String[] args) {
-		ArrayList<String> rst = new LetterCombinationsOfPhoneNumber().letterCombinations("2");
-		System.out.println(rst);
-	}
-	
+    public static void main(String[] args) {
+        ArrayList<String> rst = new LetterCombinationsOfPhoneNumber().letterCombinations("2");
+        System.out.println(rst);
+    }
+    
     public ArrayList<String> letterCombinations(String digits) {
         ArrayList<String> res = new ArrayList<String>();
         combine(digits, 0, new StringBuilder(), res);

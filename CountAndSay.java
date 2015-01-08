@@ -42,8 +42,8 @@ public class CountAndSay {
     }
     
     public static void main(String[] args) {
-		System.out.println(new CountAndSay().countAndSay(2));
-	}
+        System.out.println(new CountAndSay().countAndSay(2));
+    }
 
     public String countAndSay1(int n) {
         String val = "1";

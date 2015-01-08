@@ -6,10 +6,10 @@ package lc;
  *
  */
 public class ValidNumber {
-	public static void main(String[] args) {
-		System.out.println(new ValidNumber().isNumber("+."));
-	}
-	
+    public static void main(String[] args) {
+        System.out.println(new ValidNumber().isNumber("+."));
+    }
+    
     public boolean isNumber(String s) {
         String str = s.trim();
         
@@ -22,9 +22,9 @@ public class ValidNumber {
     private boolean isValidE(String str) {
         int eIndex = str.indexOf('e');
         if(eIndex < 0) {
-        	eIndex = str.indexOf('E');
-        	if(eIndex < 0)
-        		return false;
+            eIndex = str.indexOf('E');
+            if(eIndex < 0)
+                return false;
         }
         
         String right = str.substring(eIndex+1);
@@ -36,11 +36,11 @@ public class ValidNumber {
     }
     
     private boolean isValidDot(String str) {
-    	if(str.length() > 0 && (str.charAt(0) == '+' || str.charAt(0) == '-'))
-    		str = str.substring(1);
+        if(str.length() > 0 && (str.charAt(0) == '+' || str.charAt(0) == '-'))
+            str = str.substring(1);
 
-    	if(str.indexOf('+') >= 0 || str.indexOf('-') >= 0)
-    		return false;
+        if(str.indexOf('+') >= 0 || str.indexOf('-') >= 0)
+            return false;
     
         int dotIndex = str.indexOf('.');
         if(dotIndex < 0)

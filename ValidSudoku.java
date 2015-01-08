@@ -4,28 +4,28 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ValidSudoku {
-	public static void main(String[] args) {
-		char[][] board = {"53..7....".toCharArray(),"6..195...".toCharArray(),".98....6.".toCharArray(),"8...6...3".toCharArray(),"4..8.3..1".toCharArray(),"7...2...6".toCharArray(),".6....28.".toCharArray(),"...419..5".toCharArray(),"....8..79".toCharArray() };	
-		printArray(board);
-		
-		System.out.println(board.length);
-		System.out.println(board[0].length);
-		System.out.println(new ValidSudoku().isValidSudoku(board));
-	}
-	
-	public static void printArray(char[][] board) {
-		for (int i = 0; i < board.length; i++) {
-			for (int j = 0; j < board.length; j++) {
-				System.out.print(board[i][j] + "  ");
-			}
-			System.out.println();
-		}
-	}
+    public static void main(String[] args) {
+        char[][] board = {"53..7....".toCharArray(),"6..195...".toCharArray(),".98....6.".toCharArray(),"8...6...3".toCharArray(),"4..8.3..1".toCharArray(),"7...2...6".toCharArray(),".6....28.".toCharArray(),"...419..5".toCharArray(),"....8..79".toCharArray() };  
+        printArray(board);
+        
+        System.out.println(board.length);
+        System.out.println(board[0].length);
+        System.out.println(new ValidSudoku().isValidSudoku(board));
+    }
+    
+    public static void printArray(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                System.out.print(board[i][j] + "  ");
+            }
+            System.out.println();
+        }
+    }
 
     public boolean isValidSudoku(char[][] board) {
-    	assert board.length == 9;
-    	for(char[] array : board)
-    		assert array.length == 9;
+        assert board.length == 9;
+        for(char[] array : board)
+            assert array.length == 9;
 
         Set<Character> set = new HashSet<Character>();
         for(int i = 0; i < board.length; i++) {

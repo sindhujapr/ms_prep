@@ -1,9 +1,9 @@
 package lc;
 
 public class SearchRotatedSortedArrayII {
-	public static void main(String[] args) {
-		System.out.println(new SearchRotatedSortedArrayII().search(new int[] {1}, 0));
-	}
+    public static void main(String[] args) {
+        System.out.println(new SearchRotatedSortedArrayII().search(new int[] {1}, 0));
+    }
 
     public boolean search(int[] A, int target) {
         if(A == null || A.length == 0)
@@ -34,7 +34,7 @@ public class SearchRotatedSortedArrayII {
         return false;
     }
 
-	// http://fisherlei.blogspot.com/2013/01/leetcode-search-in-rotated-sorted-array_3.html
+    // http://fisherlei.blogspot.com/2013/01/leetcode-search-in-rotated-sorted-array_3.html
     public boolean search(int[] A, int target) {
         if(A == null || A.length == 0)
             return false;
@@ -64,7 +64,7 @@ public class SearchRotatedSortedArrayII {
     }
 
 
-	//http://jane4532.blogspot.com/2013/07/search-in-rotated-sorted-array.html
+    //http://jane4532.blogspot.com/2013/07/search-in-rotated-sorted-array.html
     public boolean search(int[] A, int target) {
         if(A == null || A.length == 0)
             return false;

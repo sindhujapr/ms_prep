@@ -11,7 +11,7 @@ public class RemoveDuplicatesFromSortedArray {
         
         return index;
     }
-	
+    
     public int removeDuplicates2(int[] A) {
         int i = 0, j = 0;
         while(j < A.length) {

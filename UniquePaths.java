@@ -1,13 +1,13 @@
 package lc;
 
 public class UniquePaths {
-	/*
-	 * f(m, n) = f(m-1, n) + f(m, n-1)
-	 */
+    /*
+     * f(m, n) = f(m-1, n) + f(m, n-1)
+     */
     public int uniquePaths(int m, int n) {
         int[][] matrix = new int[m][n];
         for(int i = 0; i < m; i++)
-        	matrix[i][0] = 1;
+            matrix[i][0] = 1;
         for(int i = 0; i < n; i++)
             matrix[0][i] = 1;
         

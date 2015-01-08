@@ -3,13 +3,13 @@ package lc;
 import java.util.ArrayList;
 
 public class Combinations {
-	public static void main(String[] args) {
-		Combinations instance = new Combinations();
-		ArrayList<ArrayList<Integer>> result = instance.combine(2, 2);
-		for(ArrayList<Integer> list : result)
-			System.out.println(list);
-	}
-	
+    public static void main(String[] args) {
+        Combinations instance = new Combinations();
+        ArrayList<ArrayList<Integer>> result = instance.combine(2, 2);
+        for(ArrayList<Integer> list : result)
+            System.out.println(list);
+    }
+    
     public ArrayList<ArrayList<Integer>> combine(int n, int k) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> one = new ArrayList<Integer>();
@@ -29,7 +29,7 @@ public class Combinations {
         }
         
         for(int i = start; one.size() < k && i <= n; i++) {
-        	one.add(i);
+            one.add(i);
             combine(n, i+1, k, result, one);
             one.remove(one.size()-1);
         }

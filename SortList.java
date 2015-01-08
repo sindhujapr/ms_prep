@@ -4,17 +4,17 @@ package lc;
  * Sort a linked list in O(n log n) time using constant space complexity.
  */
 public class SortList {
-	public static void main(String[] args) {
-		ListNode head = new ListNode(2);
-		head.next = new ListNode(1);
-		
-		ListNode res = new SortList().sortList(head);
-		while(res != null) {
-			System.out.print(res.val + " ");
-			res = res.next;
-		}
-	}
-	
+    public static void main(String[] args) {
+        ListNode head = new ListNode(2);
+        head.next = new ListNode(1);
+        
+        ListNode res = new SortList().sortList(head);
+        while(res != null) {
+            System.out.print(res.val + " ");
+            res = res.next;
+        }
+    }
+    
     public ListNode sortList(ListNode head) {
         int n = 0;
         ListNode node = head;

@@ -1,30 +1,63 @@
-package lc2;
+package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Given a triangle, find the minimum path sum from top to bottom. 
+ * Each step you may move to adjacent numbers on the row below.
+ For example, given the following triangle
+
+ [
+ [2],
+ [3,4],
+ [6,5,7],
+ [4,1,8,3]
+ ]
+ The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
+
+ Note:
+ Bonus point if you are able to do this using only O(n) extra space, 
+ where n is the total number of rows in the triangle.
+ */
 public class Triangle {
     public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        result.add(0);
-        
-        for(ArrayList<Integer> line : triangle) {
-            ArrayList<Integer> temp = new ArrayList<Integer>();
-            for(int i = 0; i < line.size(); i++) {
-                int value = line.get(i);
-                int left = i > 0 ? result.get(i-1) : Integer.MAX_VALUE;
-                int right = i < result.size() ? result.get(i) : Integer.MAX_VALUE;
-                
-                int min = Math.min(left, right);
-                temp.add(value+min);
+        List<Integer> sum = null;
+        for (ArrayList<Integer> array : triangle) {
+            // calculate the shortest path for each layer
+            List<Integer> tmp = new ArrayList<Integer>();
+
+            for (int i = 0; i < array.size(); i++) {
+                int weight = array.get(i);
+
+                /*
+                 * for the left and right most elements, we have no choice
+                 */
+                if (i == 0) {
+                    if (sum == null)
+                        tmp.add(weight);
+                    else
+                        tmp.add(sum.get(i) + weight);
+                } else if (i == array.size() - 1) {
+                    tmp.add(sum.get(i - 1) + weight);
+                } else {
+                    int sum1 = sum.get(i - 1);
+                    int sum2 = sum.get(i);
+
+                    if (sum1 < sum2)
+                        tmp.add(sum1 + weight);
+                    else
+                        tmp.add(sum2 + weight);
+                }
             }
-            
-            result = temp;
+            sum = tmp;
         }
-        
+
         int min = Integer.MAX_VALUE;
-        for(Integer value : result)
-            min = Math.min(value, min);
+        for (Integer value : sum)
+            if (min > value)
+                min = value;
+
         return min;
     }
 

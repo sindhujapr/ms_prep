@@ -1,0 +1,18 @@
+https://github.com/nitsanw/scalable-counters/tree/master/src/main/java/psy/lob/saw/counters/benchmarks1
+https://github.com/ashkrit/blog/tree/master/counter
+http://ashkrit.blogspot.sg/2013/09/scalable-counters-for-multi-core.html
+
+Observation
+  Multi core machines becoming easily available & we have to change the way we handle concurrency, traditional way of doing concurrency is not going to scale in today's time when having 24 or 48 core server is very common.
+
+ - To reduce the contention you have to use multiple counters and then aggregate them later
+
+ - Core based counter works well if number of threads will be less or same as number of cores
+
+ - Thread based counter is good when number of threads are much more than available core
+
+ - Key to reduce contention is identify counter to which thread will write,i have used simple approach based on thread id, but much better approach are available, look at ThreadLocalRandom of JDK 8 for some ideas.
+
+ - Thread based approach is used in LongAdder of JDK8, which creates many slots to reduce contention.
+
+Code for all the counters used in this test are available @ Github 

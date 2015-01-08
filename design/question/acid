@@ -1,0 +1,8 @@
+http://en.wikipedia.org/wiki/ACID
+Atomicity:
+Consistency:
+http://publib.boulder.ibm.com/infocenter/soliddb/v6r3/index.jsp?topic=/com.ibm.swg.im.soliddb.replication.doc/doc/ensuring.database.consistency.html
+Different levels of consistency: http://en.wikipedia.org/wiki/Consistency_model
+
+Isolation:
+Durability:

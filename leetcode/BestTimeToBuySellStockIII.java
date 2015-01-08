@@ -1,4 +1,4 @@
-package lc2;
+package leetcode;
 
 /*
  * http://blog.unieagle.net/2012/12/05/leetcode%E9%A2%98%E7%9B%AE%EF%BC%9Abest-time-to-buy-and-sell-stock-iii%EF%BC%8C%E4%B8%80%E7%BB%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/
@@ -9,55 +9,72 @@ public class BestTimeToBuySellStockIII {
      * is similar to palindrome partition II.
      */
     public int maxProfit(int[] prices) {
-        if(prices == null || prices.length < 2)
+        if (prices.length < 2)
             return 0;
-        
+
         int[] maxProfit = new int[prices.length];
-        
-        int max = 0;
+        maxProfit[0] = 0;
+
         int min = prices[0];
-        for(int i = 1; i < prices.length; i++) {
-            max = maxProfit[i] = Math.max(prices[i]-min, max);
-            min = Math.min(min, prices[i]);
+        int max1 = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] - min > max1)
+                max1 = prices[i] - min;
+
+            maxProfit[i] = max1;
+            if (prices[i] < min)
+                min = prices[i];
         }
-        
-        int maxSum = maxProfit[prices.length-1];
-        
-        max = 0;
-        int maxNum = prices[prices.length-1];
-        for(int i = prices.length-2; i >= 0; i--) {
-            max = Math.max(max, maxNum-prices[i]);
-            maxNum = Math.max(maxNum, prices[i]);
-            
-            maxSum = Math.max(maxSum, maxProfit[i]+max);
+
+        /*
+         * there is situation that we can only do one transaction, thus the
+         * return value would be the profit of the only transaction.
+         */
+        int maxSum = maxProfit[maxProfit.length - 1];
+
+        int max = prices[prices.length - 1];
+        /*
+         * max2 record the max profit for [i, ..., n-1]
+         */
+        int max2 = 0;
+        for (int i = prices.length - 2; i >= 1; i--) {
+            if (max - prices[i] > max2)
+                max2 = max - prices[i];
+
+            if (maxSum < max2 + maxProfit[i - 1])
+                maxSum = max2 + maxProfit[i - 1];
+
+            if (prices[i] > max)
+                max = prices[i];
         }
-        
+
         return maxSum;
     }
-
-    // easier to understand
-    public int maxProfit(int[] prices) {
+    
+    // my own implementation
+    public int maxProfit2(int[] prices) {
         if(prices == null || prices.length < 2)
             return 0;
         
         int n = prices.length;
-        int[] left = new int[n], right = new int[n];
         
+        int[] lp = new int[n];
         int min = prices[0];
         for(int i = 1; i < n; i++) {
-            left[i] = Math.max(prices[i]-min, left[i-1]);
-            min = Math.min(prices[i], min);
+            lp[i] = Math.max(lp[i-1], prices[i]-min);
+            min = Math.min(min, prices[i]);
         }
         
-        int max = prices[n-1];
+        int maxProfitFromRight = 0;
+        int maxPriceFromRight = prices[n-1];
+        int maxProfit = 0;
+        
         for(int i = n-2; i >= 0; i--) {
-            right[i] = Math.max(max-prices[i], right[i+1]);
-            max = Math.max(prices[i], max);
+            maxProfitFromRight = Math.max(maxProfitFromRight, maxPriceFromRight-prices[i]);
+            maxProfit = Math.max(maxProfit, lp[i] + maxProfitFromRight);
+            maxPriceFromRight = Math.max(maxPriceFromRight, prices[i]);
         }
         
-        int res = 0;
-        for(int i = 0; i < n; i++)
-            res = Math.max(left[i]+right[i], res);
-        return res;
+        return maxProfit;
     }
 }

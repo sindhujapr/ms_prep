@@ -1,0 +1,89 @@
+http://nosql.mypopescu.com/post/102868229019/kafka-and-samza-distributed-stream-processing-in
+http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html
+http://smartdatacollective.com/michelenemschoff/206391/quick-guide-structured-and-unstructured-data
+http://webdam.inria.fr/Jorge/html/wdmch15.html			http://webdam.inria.fr/Jorge/html/wdm.html (check some real world applications)
+
+http://highscalability.com/blog/2013/10/28/design-decisions-for-scaling-your-high-traffic-feeds.html
+http://www.quora.com/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed
+http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed?q=news+feeds
+
+videos:
+http://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=050c3778-a073-48f8-937f-97081ab965f7
+http://www.infoq.com/presentations/Facebook-Software-Stack
+http://www.infoq.com/presentations/?utm_source=infoq&utm_medium=breadcrumbs_feature&utm_campaign=breadcrumbs
+http://www.infoq.com/presentations/samza-linkedin-2014
+http://www.infoq.com/presentations/mantis
+
+FB:
+https://research.facebook.com/publications/p2/
+https://code.facebook.com/infra/
+https://www.youtube.com/watch?v=5RfFhMwRAic
+https://www.youtube.com/watch?v=V_C-T5S-w8g&index=9&list=PLb0IAmt7-GS0HarXUJP6v4I5IPaCRkX3c (RocksDB: A High Performance Embedded Key-Value Store for Flash Storage)
+https://code.facebook.com/posts/229861827208629/scaling-the-facebook-data-warehouse-to-300-pb/
+https://www.facebook.com/notes/mysql-at-facebook/online-schema-change-for-mysql/430801045932
+https://www.facebook.com/notes/facebook-engineering/wormhole-pubsub-system-moving-data-through-space-and-time/10151504075843920
+https://code.facebook.com/posts/223102601175603/mcdipper-a-key-value-cache-for-flash-storage/
+https://code.facebook.com/posts/207413016090891/linkbench-a-database-benchmark-for-the-social-graph/
+https://www.facebook.com/notes/facebook-engineering/presto-interacting-with-petabytes-of-data-at-facebook/10151786197628920
+http://prestodb.io/
+https://code.facebook.com/posts/816473015039157/making-facebook-s-software-infrastructure-more-energy-efficient-with-autoscale/
+https://code.facebook.com/posts/161217544069387/the-life-of-a-typeahead-query/
+https://code.facebook.com/posts/699902483369896/inside-facebook-messages-application-server/
+http://www.slideshare.net/brizzzdotcom/facebook-messages-hbase/		(great introduction for HBase application and its pros/cons)
+https://www.youtube.com/watch?v=UaGINWPK068			(see problems during migration)
+https://code.facebook.com/posts/150168455181595/facebook-chat/
+https://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf
+https://code.facebook.com/posts/685565858139515/needle-in-a-haystack-efficient-storage-of-billions-of-photos/
+https://code.facebook.com/posts/227813470702374/tao-the-power-of-the-graph/
+https://www.usenix.org/conference/atc13/technical-sessions/presentation/bronson		(includes some details about cache consistency)
+http://www.quora.com/What-is-the-TAO-cache-used-for-at-Facebook
+https://research.facebook.com/blog/1522692927972019/facebook-s-top-open-data-problems/
+http://www.quora.com/What-have-been-Facebooks-greatest-technical-accomplishments
+https://www.facebook.com/note.php?note_id=39391378919 (scaling memcached at Facebook)
+http://www.ece.lsu.edu/hpca-18/files/HPCA2012_Facebook_Keynote.pdf
+http://www.quora.com/What-is-Facebooks-architecture
+
+troubleshooting:
+https://code.facebook.com/posts/1499322996995183/solving-the-mystery-of-link-imbalance-a-metastable-failure-state-at-scale/ (interesting problem caused by MRU)
+
+mcrouter:
+https://code.facebook.com/posts/296442737213493/introducing-mcrouter-a-memcached-protocol-router-for-scaling-memcached-deployments/
+https://www.youtube.com/watch?v=e9lTgFO-ZXw&list=PLb0IAmt7-GS0HarXUJP6v4I5IPaCRkX3c&index=8 (Turning Caches into Distributed Systems with mcrouter)
+
+memcache:
+https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/
+https://www.adayinthelifeof.nl/2009/12/21/big-o-notation/
+https://code.google.com/p/memcached/wiki/NewUserInternals
+
+considerations:
+(tail) latency, throughput, scalability, high availability, SPOF, durability, consistency model, normalize vs denormalize, operational efficiency, cascading failure, optimize for read or write
+
+https://www.usenix.org/legacy/event/lisa07/tech/full_papers/hamilton/hamilton_html/
+
+
+Scale@2014
+https://code.facebook.com/events/476109749158674/-scale-2014/
+
+Idempotence in distributed systems:
+http://devhawk.net/2007/11/09/the-importance-of-idempotence/
+https://developer.salesforce.com/blogs/engineering/2013/01/implementing-idempotent-operations-with-salesforce.html
+
+mysql:
+http://mysqlha.blogspot.com
+
+Scaling HTTP is easy:
+http://www.slideshare.net/mmalone/scaling-gis-data-in-nonrelational-data-stores
+
+CAP
+http://ssougou.blogspot.com/
+http://en.wikipedia.org/wiki/ACID
+
+Long polling:
+http://en.wikipedia.org/wiki/Push_technology
+
+Papers that have influenced the design of Akka
+https://docs.google.com/document/d/1nPMMIcUd7yXxXikdyc9cKRo1GkTQ5c8K9_8hj-464YE/pub
+
+http://blog.wikimedia.org/2014/12/29/how-we-made-editing-wikipedia-twice-as-fast/
+
+http://slick.typesafe.com/

@@ -1,0 +1,16 @@
+http://www.careercup.com/question?id=20779669
+
+Determine the size of Java object
+The intent of the interviewer is certainly Reflection, but you can serialize the object and calculate the number of bytes stored, as well.
+The same approach should work for different objects and give a relative "size" which can then be compared.
+The writeObject method should be overridden such that only the member variables of the object are serialized
+(Since we are talking about containers). Then a bytecount would return reliable comparison results. 
+This should work since all objects are custom serialized the same way,
+
+http://stackoverflow.com/questions/52353/in-java-what-is-the-best-way-to-determine-the-size-of-an-object
+If object is serializable, we can use ByteArrayOutputStream and ObjectOutputStream to write the object to file and then check the file size
+
+Determine of the heap usage:
+long heapSize = Runtime.getRuntime().totalMemory();
+long heapMaxSize = Runtime.getRuntime().maxMemory();
+long heapFreeSize = Runtime.getRuntime().freeMemory();

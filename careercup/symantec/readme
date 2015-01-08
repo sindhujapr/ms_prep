@@ -1,0 +1,8 @@
+all design patterns you know and explain them
+
+http://www.careercup.com/question?id=16933672
+Explain equlas & hashcode methods. When you will override these two methods? 
+
+This same question was asked in other two face to face interviews also. You should know how HashMap actually works. Like collision, put, get. 
+
+How to increase HashMap performance.

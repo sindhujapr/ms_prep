@@ -1,0 +1,11 @@
+http://www.geeksforgeeks.org/np-completeness-set-1/
+
+
+P is set of problems that can be solved by a deterministic Turing machine in Polynomial time.
+
+NP is set of decision problems that can be solved by a Non-deterministic Turing Machine in Polynomial time. P is subset of NP (any problem that can be solved by deterministic machine in polynomial time can also be solved by non-deterministic machine in polynomial time).
+Informally, NP is set of decision problems which can be solved by a polynomial time via a "Lucky Algorithm", a magical algorithm that always makes a right guess among the given set of choices (Source Ref 1).
+
+NP-complete problems are the hardest problems in NP set.  A decision problem L is NP-complete if:
+1) L is in NP (Any given solution for NP-complete problems can be verified quickly, but there is no efficient known solution).
+2) Every problem in NP is reducible to L in polynomial time (Reduction is defined below).

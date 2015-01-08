@@ -1,0 +1,81 @@
+http://www.geeksforgeeks.org/tag/Greedy-Algorithm/
+
+
+adjacency matrix
+Pros: Representation is easier to implement. Removing an edge takes O(1) time. Queries like whether there is an edge from vertex u to vertex v are efficient and can be done O(1).
+Cons: Consumes more space O(V^2). Even if the graph is sparse(contains less number of edges), it consumes the same space. Adding a vertex is O(V^2) time.
+
+adjacency list
+Pros: Saves space O(|V|+|E|) . In the worst case, there can be C(V, 2) number of edges in a graph thus consuming O(V^2) space. Adding a vertex is easier.
+Cons: Queries like whether there is an edge from vertex u to vertex v are not efficient and can be done O(V).
+
+http://www.geeksforgeeks.org/graph-and-its-representations/
+
+
+
+difference between Floyd Warshall algorithm and Dijkstra's shortest path algorithm
+The former is to solve the All Pairs Shortest Path problem, which is to find shortest distances between every pair of vertices in a given edge weighted directed Graph.
+The latter is to find shortest paths from source to all vertices in the given graph.
+http://www.geeksforgeeks.org/dynamic-programming-set-16-floyd-warshall-algorithm/
+http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
+
+difference between Dijkstra and Prim's algorithm? 
+Dijsktra's algorithm finds the minimum distance from node i to all nodes (you specify i). So in return you get the minimum distance tree from node i.
+Prim's algorithm gives you the minimum spanning tree for a given graph. A tree that connects all nodes while the sum of all costs is the minimum possible.
+So with Dijkstra you can go from the selected node to any other with the minimum cost, you don't get this with Prim's
+
+difference between DP and greedy algorithm
+1. from http://stackoverflow.com/questions/13713572/how-is-dynamic-programming-different-from-greedy-technique
+The difference between dynamic programming and greedy algorithms is that the subproblems overlap
+Dijsktra's Algorithm is a greedy approach (At each step, chose the node that the path to it is currently minimal - the choice is done greedily based on the local state of the algorithm).
+Bellman-Ford algorithm is a DP solution ("relax" ALL edges effectively reducing the problem)
+
+2. From http://en.wikipedia.org/wiki/Greedy_algorithm
+The choice made by a greedy algorithm may depend on choices made so far but not on future choices or all the solutions to the subproblem.
+It iteratively makes one greedy choice after another, reducing each given problem into a smaller one. 
+In other words, a greedy algorithm never reconsiders its choices. 
+This is the main difference from dynamic programming, which is exhaustive and is guaranteed to find the solution. 
+After every stage, dynamic programming makes decisions based on all the decisions made in the previous stage, 
+and may reconsider the previous stage's algorithmic path to solution.
+
+3. From CLRS chapter 16 overview:
+Greedy algorithms don't always yield optimal solutions, but for many problems they do.
+
+examples of greedy algorithm:
+http://www.geeksforgeeks.org/greedy-algorithms-set-1-activity-selection-problem/
+1) Kruskal's Minimum Spanning Tree (MST): In Kruskal's algorithm, we create a MST by picking edges one by one.
+2) Prim's Minimum Spanning Tree: In Prim's algorithm also, we create a MST by picking vertices one by one.
+3) Dijkstra's Shortest Path: The Dijkstra's algorithm is very similar to Prim's algorithm.
+4) Huffman Coding: Huffman Coding is a loss-less compression technique.
+5) Activity-selection problem in CLRS 16.1
+6) Scheduling of unit-time tasks with deadlines on single processor, in CLRS 16.5
+Other Combinatorial Optimization Problems
+- Knapsack (Chap 16.2)
+- Traveling Salesman (Chap 35.2) http://en.wikipedia.org/wiki/Travelling_salesman_problem
+- Set-covering (Chap 35.3)
+Fractional knapsack
+
+Exercise (Interval Coloring Problem)
+Suppose that we have a set of activities to schedule among a large number of lecture halls. We wish to schedule all the activities using minimum number of lecture halls. 
+Give an efficient greedy algorithm to determine which activity should use which lecture hall.
+
+The greedy algorithms are sometimes also used to get an approximation for Hard optimization problems. 
+For example, Traveling Salesman Problem is a NP-Hard problem. 
+A Greedy choice for this problem is to pick the nearest unvisited city from the current city at every step. 
+This solution doesn't always produce the best optimal solution, but can be used to get an approximate optimal solution.
+
+Difference between DP and Divide-and-Conquer:
+- Using Divide and Conquer to solve these problems is inefficient as the same common sub-sub-problems have to be solved many times.
+- DP will solve each of them once and their answers are stored in a table for future reference.
+
+http://en.wikipedia.org/wiki/Combinatorial_optimization
+
+There are totally 4 graph algorightms:
+Dijkstra's shortest path (greedy, single source but doesn't handle negative weights)
+Prime's minimum spanning tree (greedy)
+Bellman ford (dp, solves the same problem as Dijkstra's algorithm but supports negative weights)
+Kruskal (solves the same problem as Prim's MST and uses DP)
+
+Difference between Kruskal and Prim algorighms:
+http://stackoverflow.com/questions/1195872/kruskal-vs-prim
+Pay attention to the picture. Generally PRIM is faster if there are many edges.

@@ -1,4 +1,4 @@
-package lc2;
+package leetcode;
 
 public class DeadlockDetection {
     private int[][] objectAllocation = new int[10][];

@@ -75,7 +75,7 @@ Since, we are permitted only k deletion, while comparing character of S and S', 
         for (i = 1; i <= n; i++) {
             int from = Math.max(1, i-k), to = Math.min(i+k, n);
             for (j = from; j <= to; j++) {
-                if (a.charAt(i-1) == b.charAt(j-1))			// same character
+                if (a.charAt(i-1) == b.charAt(j-1))         // same character
                     dp[i][j] = dp[i-1][j-1];
                 // note that we don't allow letter substitutions
 

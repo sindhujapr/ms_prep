@@ -1,0 +1,20 @@
+http://www.careercup.com/question?id=5771170104213504
+-Timezone conversion 
+-Currency conversion 
+-Large no of connection pooling 
+-Less time to free connection in case system is idle 
+-Passivation support 
+-Log In data encryption security
+-SPOF
+-scalability
+
+http://www.javadiscover.com/2013/02/how-to-create-fully-singleton-design.html
+- private final static
+- override clone() and readResolve()
+- double-checked initialization or volatile or static singleton holder
+
+
+check glassdoor:
+http://www.glassdoor.com/Interview/Facebook-Interview-Questions-E40772.htm
+design news feed program
+Design end 2 end, Facebook's messaging infrastructure . 

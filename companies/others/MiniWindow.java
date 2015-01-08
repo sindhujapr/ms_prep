@@ -32,9 +32,9 @@ public class MiniWindow {
                         hasFound[s]--;
                     /*
                      * if we decrease count here, there will be failed test case:
-                     * Input:	"ADOBECODEBANC", "ABC"
-                     * Output:	"ADOBEC"
-                     * Expected:	"BANC"
+                     * Input:   "ADOBECODEBANC", "ABC"
+                     * Output:  "ADOBEC"
+                     * Expected:    "BANC"
                      */
                     s = S.charAt(++start);
                 }

@@ -1,0 +1,21 @@
+http://bytes.com/topic/c/answers/699702-when-use-merge-sort-quick-sort-heap-sort-effectivly
+when to use merge sort?
+You have a large number of things to sort and enough room to have the auxiliary storage array- and you need a stable sort. It is the ONLY stable O(n*log(n)) sort.
+Merge sort reads sequentially and is unmatched for reading from slow drives, or magnetic tapes.
+Merge sort can be easily threaded due to it's split in half nature, so these days I think it pretty much trumps heap sort (and it's variation smooth sort).
+
+http://stackoverflow.com/questions/7878768/when-to-use-merge-sort-and-when-to-use-quick-sort
+It typically depends on the data structures involved. Quick sort is typically the fastest, but it doesn't guarantee O(n*log(n)); 
+there are degenerate cases where it becomes O(n^2). Heap sort is the usual alternative; it guarantees O(n*log(n)), regardless of the initial order, 
+but it has a much higher constant factor. It's usually used when you need a hard upper limit to the time taken. 
+Some more recent algorithms use quick sort, but attempt to recognize when it starts to degenerate, and switch to heap sort then. 
+Merge sort is used when the data structure doesn't support random access, since it works with pure sequential access (forward iterators, rather than random access iterators). 
+It's used in std::list<>::sort, for example. It's also widely used for external sorting, where random access can be very, very expensive compared to sequential access. 
+(When sorting a file which doesn't fit into memory, you might break it into chunks which fit into memory, sort these using quicksort, writing each out to a file, then merge sort the generated files.)
+
+why quicksort?
+See Quicksort on wikipedia (http://en.wikipedia.org/wiki/Quicksort):
+
+Typically, quicksort is significantly faster in practice than other O(nlogn) algorithms, because its inner loop can be efficiently implemented on most architectures, and in most real-world data, it is possible to make design choices which minimize the probability of requiring quadratic time.
+
+Note that the very low memory requirement is a big plus as well.

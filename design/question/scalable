@@ -1,0 +1,14 @@
+http://horicky.blogspot.com/2008/02/scalable-system-design.html
+http://horicky.blogspot.com/2008/03/database-scalability.html
+http://horicky.blogspot.com/2008/03/web-site-scalability.html
+http://horicky.blogspot.com/2008/11/design-for-parallelism.html
+
+
+DAG: directed acyclic graph
+
+
+different technologies used in LinkedIn:
+http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+
+memcached@facebook
+https://www.facebook.com/note.php?note_id=39391378919

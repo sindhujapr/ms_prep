@@ -5,3 +5,6 @@ Android Binder IPC Framework
 https://www.youtube.com/watch?v=hiq3mGfLOtE
 http://mindtherobot.com/blog/159/android-guts-intro-to-loopers-and-handlers/
 http://mattias.niklewski.com/2012/09/android_event_loop.html
+
+unit test:
+http://robolectric.org/

@@ -1,6 +1,9 @@
 package interview.commvault.synchronization;
 
 /*
+ * http://stackoverflow.com/questions/10684111/can-notify-wake-up-the-same-thread-multiple-times
+ *
+ * slightly improved based on OddEvenNumberObject
  * slightly improved based on OddEvenNumberObject
  * 
  * Semaphore isn't suitable for this problem because we want to control 

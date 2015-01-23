@@ -87,3 +87,17 @@ https://docs.google.com/document/d/1nPMMIcUd7yXxXikdyc9cKRo1GkTQ5c8K9_8hj-464YE/
 http://blog.wikimedia.org/2014/12/29/how-we-made-editing-wikipedia-twice-as-fast/
 
 http://slick.typesafe.com/
+
+stream characters:
+http://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html#package.description
+
+Rx:
+https://msdn.microsoft.com/en-us/data/gg577611.aspx
+http://benjchristensen.com/
+https://www.youtube.com/watch?v=_t06LRX0DV0		(talk by Ben)
+https://speakerdeck.com/benjchristensen/reactive-streams-with-rx-at-javaone-2014
+
+Haskell & FRP:
+http://aosabook.org/en/posa/warp.html
+https://www.haskell.org/haskellwiki/FRP
+http://en.wikibooks.org/wiki/Haskell/Denotational_semantics

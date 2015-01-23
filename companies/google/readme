@@ -17,6 +17,8 @@ Google : Link addition
 add 2 link lists without reverse in O(n) in constant space
 eg 1-2-3 + 1-7 1-4-0
 
+http://www.quora.com/Given-a-dictionary-of-words-how-can-we-efficiently-find-a-pair-words-s-t-they-dont-have-characters-in-common-and-sum-of-their-length-is-maximum
+
 java weak reference
 
 Find inorder predecessor of a given node in BST
@@ -238,6 +240,7 @@ For the 3rd step, process [1 2 6 7] and [3 4 5 8 9 10] repectively
 
 O(n) shuffle:
 https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/02.09.md
+http://www.geeksforgeeks.org/sort-array-wave-form-2/
 
 convex hull:
 https://hellosmallworld123.wordpress.com/2014/08/01/convex-hull-algorithm/

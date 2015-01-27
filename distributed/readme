@@ -1,4 +1,5 @@
 http://nosql.mypopescu.com/post/102868229019/kafka-and-samza-distributed-stream-processing-in
+http://www.jasongj.com/2015/01/02/Kafka%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/ (very good)
 http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html
 http://smartdatacollective.com/michelenemschoff/206391/quick-guide-structured-and-unstructured-data
 http://webdam.inria.fr/Jorge/html/wdmch15.html			http://webdam.inria.fr/Jorge/html/wdm.html (check some real world applications)
@@ -101,3 +102,6 @@ Haskell & FRP:
 http://aosabook.org/en/posa/warp.html
 https://www.haskell.org/haskellwiki/FRP
 http://en.wikibooks.org/wiki/Haskell/Denotational_semantics
+
+queuing theory:
+http://ss15-teropa.divshot.io/

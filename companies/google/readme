@@ -255,3 +255,10 @@ compare string from stream with a given pattern, using circular buffer, which ne
 design search suggestion (max heap and trie tree)
 given a float matrix and an odd number k, output a matrix with each element has  average value of k*k elements around it (using DP to optimize it)
 write some concurrency code to simulate MapReduce, using Java Callable, etc. Also asked some questions about fault tolerance, eg, how to deal with BadMachineException, how to avoid hiccup that one server returns wrong result.
+
+Don't understand yet:
+http://www.mitbbs.com/article_t1/JobHunting/32871125_0_1.html
+http://ideone.com/fnC3de
+http://dongyingjie10.blog.163.com/blog/static/176727054201362511562682/
+http://www.artofproblemsolving.com/blog/54262
+http://blog.csdn.net/cklsoft/article/details/8458053

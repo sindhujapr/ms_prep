@@ -1,0 +1,11 @@
+how to bypass some methods, including constructors, from parent class:
+http://www.gitshah.com/2010/06/how-to-supress-methods-and-constructors.html
+https://code.google.com/p/powermock/source/browse/trunk/modules/module-test/powermock/junit4-test/src/test/java/samples/junit4/suppressconstructor/SuppressConstructorDemoTest.java?r=976&spec=svn976
+https://code.google.com/p/powermock/source/browse/trunk/modules/module-test/powermock/?r=976
+
+verify private:
+http://stackoverflow.com/questions/16515809/powermock-verify-private-static-method-call-in-non-static-method
+
+refs:
+https://code.google.com/p/powermock/
+https://code.google.com/p/powermock/wiki/SuppressUnwantedBehavior
